@@ -58,7 +58,7 @@ namespace WebApp.manage.admin
         private int Get_PartnersListTotalCount()
         {
             zlzw.BLL.PartnersListBLL partnersListBLL = new zlzw.BLL.PartnersListBLL();
-            DataTable dt = partnersListBLL.GetList("").Tables[0];
+            DataTable dt = partnersListBLL.GetList("IsEnable=1").Tables[0];
             if (dt.Rows.Count > 0)
             {
                 return dt.Rows.Count;
@@ -72,7 +72,7 @@ namespace WebApp.manage.admin
         private void PartnersList_BindGrid()
         {
             zlzw.BLL.PartnersListBLL partnersListBLL = new zlzw.BLL.PartnersListBLL();
-            DataTable dt = partnersListBLL.GetList(grid1.PageSize, grid1.PageIndex + 1, "*", "PublishDate", 0, "desc", "").Tables[0];
+            DataTable dt = partnersListBLL.GetList(grid1.PageSize, grid1.PageIndex + 1, "*", "PublishDate", 0, "desc", "IsEnable=1").Tables[0];
 
             grid1.DataSource = dt;
             grid1.DataBind();

@@ -58,7 +58,7 @@ namespace WebApp.manage.admin
         private int Get_VentureStarListTotalCount()
         {
             zlzw.BLL.VentureStarListBLL ventureStarListBLL = new zlzw.BLL.VentureStarListBLL();
-            DataTable dt = ventureStarListBLL.GetList("").Tables[0];
+            DataTable dt = ventureStarListBLL.GetList("IsEnable=1").Tables[0];
             if (dt.Rows.Count > 0)
             {
                 return dt.Rows.Count;
@@ -72,7 +72,7 @@ namespace WebApp.manage.admin
         private void VentureStarList_BindGrid()
         {
             zlzw.BLL.VentureStarListBLL ventureStarListBLL = new zlzw.BLL.VentureStarListBLL();
-            DataTable dt = ventureStarListBLL.GetList(grid1.PageSize, grid1.PageIndex + 1, "*", "PublishDate", 0, "desc", "").Tables[0];
+            DataTable dt = ventureStarListBLL.GetList(grid1.PageSize, grid1.PageIndex + 1, "*", "PublishDate", 0, "desc", "IsEnable=1").Tables[0];
 
             grid1.DataSource = dt;
             grid1.DataBind();

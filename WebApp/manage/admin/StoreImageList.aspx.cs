@@ -56,7 +56,7 @@ namespace WebApp.manage.admin
         private int Get_StoreImageTotalCount()
         {
             zlzw.BLL.StoreImageListBLL storeImageListBLL = new zlzw.BLL.StoreImageListBLL();
-            DataTable dt = storeImageListBLL.GetList("").Tables[0];
+            DataTable dt = storeImageListBLL.GetList("IsEnable=1").Tables[0];
             if (dt.Rows.Count > 0)
             {
                 return dt.Rows.Count;

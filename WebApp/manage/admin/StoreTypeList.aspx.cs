@@ -56,7 +56,7 @@ namespace WebApp.manage.admin
         private int Get_StoreTypeListTotalCount()
         {
             zlzw.BLL.DictionaryListBLL dictionaryListBLL = new zlzw.BLL.DictionaryListBLL();
-            DataTable dt = dictionaryListBLL.GetList("DictionaryCategory='StoreType'").Tables[0];
+            DataTable dt = dictionaryListBLL.GetList("DictionaryCategory='StoreType' and IsEnable=1").Tables[0];
             if (dt.Rows.Count > 0)
             {
                 return dt.Rows.Count;

@@ -58,7 +58,7 @@ namespace WebApp.manage.admin
         private int Get_NewsListTotalCount()
         {
             zlzw.BLL.NewsListBLL newsListBLL = new zlzw.BLL.NewsListBLL();
-            DataTable dt = newsListBLL.GetList("").Tables[0];
+            DataTable dt = newsListBLL.GetList("IsEnable=1").Tables[0];
             if (dt.Rows.Count > 0)
             {
                 return dt.Rows.Count;

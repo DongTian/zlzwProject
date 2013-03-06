@@ -56,7 +56,7 @@ namespace WebApp.manage.admin
         private int Get_SpecialTopicTotalCount()
         {
             zlzw.BLL.BannerListBLL bannerListBLL = new zlzw.BLL.BannerListBLL();
-            DataTable dt = bannerListBLL.GetList("").Tables[0];
+            DataTable dt = bannerListBLL.GetList("IsEnable=1 and BannerType=1").Tables[0];
             if (dt.Rows.Count > 0)
             {
                 return dt.Rows.Count;

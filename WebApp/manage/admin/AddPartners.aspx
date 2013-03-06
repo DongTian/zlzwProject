@@ -35,7 +35,7 @@
                             <ext:TextBox ID="txbPartnersName" runat="server" Label="合作伙伴名称" EmptyText="合作伙伴名称" Required="true"
                             RequiredMessage="合作伙伴名称不能为空"></ext:TextBox>
                             <ext:FileUpload ID="btnImageUpload" runat="server" Label="企业Logo上传" EmptyText="请选择一张尺寸为135*70的企业Logo"></ext:FileUpload>
-                            <ext:FileUpload ID="btnBannerUpload" runat="server" Label="企业Banner上传" EmptyText="请选择一张宽度为1024px的企业Banner></ext:FileUpload>
+                            <ext:FileUpload ID="btnBannerUpload" runat="server" Label="企业Banner上传" EmptyText="请选择一张宽度为1024px的企业Banner"></ext:FileUpload>
                             <ext:CheckBox ID="ckbIsHot" runat="server" Label="热门企业" Checked="false"></ext:CheckBox>
                             <ext:HtmlEditor ID="txbPartner" Label="合作伙伴介绍" runat="server" Height="250px"></ext:HtmlEditor>
                             <ext:Image ID="imgUploadLogo" runat="server" Label="企业Logo" Visible="false"></ext:Image>

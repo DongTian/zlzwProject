@@ -58,7 +58,7 @@ namespace WebApp.manage.admin
         private int Get_StoreStatisticsListTotalCount()
         {
             zlzw.BLL.StorefrontEleganceListBLL storefrontEleganceListBLL = new zlzw.BLL.StorefrontEleganceListBLL();
-            DataTable dt = storefrontEleganceListBLL.GetList("").Tables[0];
+            DataTable dt = storefrontEleganceListBLL.GetList("IsEnable=1").Tables[0];
             if (dt.Rows.Count > 0)
             {
                 return dt.Rows.Count;
@@ -72,7 +72,7 @@ namespace WebApp.manage.admin
         private void StorefrontEleganceList_BindGrid()
         {
             zlzw.BLL.StorefrontEleganceListBLL storefrontEleganceListBLL = new zlzw.BLL.StorefrontEleganceListBLL();
-            DataTable dt = storefrontEleganceListBLL.GetList(grid1.PageSize, grid1.PageIndex + 1, "*", "PublishDate", 0, "desc", "").Tables[0];
+            DataTable dt = storefrontEleganceListBLL.GetList(grid1.PageSize, grid1.PageIndex + 1, "*", "PublishDate", 0, "desc", "IsEnable=1").Tables[0];
 
             grid1.DataSource = dt;
             grid1.DataBind();

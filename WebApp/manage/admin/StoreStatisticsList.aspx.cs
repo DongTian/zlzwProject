@@ -56,7 +56,7 @@ namespace WebApp.manage.admin
         private int Get_StoreStatisticsListTotalCount()
         {
             zlzw.BLL.StoreStatisticsListBLL storeStatisticsListBLL = new zlzw.BLL.StoreStatisticsListBLL();
-            DataTable dt = storeStatisticsListBLL.GetList("").Tables[0];
+            DataTable dt = storeStatisticsListBLL.GetList("IsEnable=1").Tables[0];
             if (dt.Rows.Count > 0)
             {
                 return dt.Rows.Count;
