@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>无标题页</title>
+    <link href="Resources/css/layout.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js"></script>
+    <script src="Resources/js/jquery.infieldlabel.min.js" type="text/javascript"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(function () { $("label").inFieldLabels(); });
+	</script>
+	<!--[if lte IE 6]>
+		<style type="text/css" media="screen">
+			form label {
+					background: #fff;
+			}
+		</style>
+	<![endif]-->
+    <script type="text/javascript" src="Resources/js/DataBaseLogin.js"></script>
+</head>
+<body>
+    <form onsubmit="return checkInput()" method="post" target="_blank" action="https://exmail.qq.com/cgi-bin/login" name="form1">
+        <input type="hidden" value="false" name="firstlogin">
+        <input type="hidden" value="dm_loginpage" name="errtemplate">
+        <input type="hidden" value="other" name="aliastype">
+        <input type="hidden" value="bizmail" name="dmtype">
+        <input type="hidden" value="" name="p">
+        <p>&nbsp;</p>
+        <fieldset>
+            <legend>数据库用户登陆</legend>
+            <p>
+                <label for="uin">
+                    账号</label><br />
+                <input type="text" name="uin" value="" id="uin">
+                <div style="float:right; margin-top:-30px; margin-right:75px;color: #204877;"></div>
+                <input type="hidden" value="zhilaizhiwang.net" name="domain">
+            </p>
+            <p>
+                <label for="pwd">
+                    密码</label><br />
+                <input type="password" name="pwd" value="" id="pwd">
+            </p>
+        </fieldset>
+        <p>
+            <input id="btnLogin" type="button" value=" 登 录 &rarr;" />
+            　
+        </p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Tree>
+  <TreeNode Text="用户管理" SingleClickExpand="true">
+    <TreeNode Text="管理员管理" NavigateUrl="admin/AdminList.aspx" >
+    </TreeNode>
+  </TreeNode>
+  <TreeNode Text="焦点图与横幅广告管理" SingleClickExpand="true">
+      <TreeNode Text="焦点图管理" NavigateUrl="admin/BannerList.aspx" >
+      </TreeNode>
+      <TreeNode Text="横幅广告管理" NavigateUrl="admin/SpecialTopicList.aspx" >
+      </TreeNode>
+    </TreeNode>
+  <TreeNode Text="新闻管理" SingleClickExpand="true">
+    <TreeNode Text="新闻类型管理" NavigateUrl="admin/NewsTypeList.aspx" >
+    </TreeNode>
+    <TreeNode Text="企业动态管理" NavigateUrl="admin/NewsList.aspx" >
+    </TreeNode>
+  </TreeNode>
+    <TreeNode Text="合作伙伴管理" SingleClickExpand="true">
+        <TreeNode Text="合作伙伴管理" NavigateUrl="admin/PartnersList.aspx" >
+        </TreeNode>
+        <TreeNode Text="合作伙伴职位管理" NavigateUrl="admin/PartnersJobList.aspx" >
+        </TreeNode>
+    </TreeNode>
+    <TreeNode Text="诚聘英才管理" SingleClickExpand="true">
+        <TreeNode Text="门店管理" NavigateUrl="admin/StoreTypeList.aspx" >
+        </TreeNode>
+        <TreeNode Text="诚聘英才管理" NavigateUrl="admin/CareersList.aspx" >
+        </TreeNode>
+    </TreeNode>
+  <TreeNode Text="岗位管理" SingleClickExpand="true">
+    <TreeNode Text="岗位类型管理" NavigateUrl="admin/JobCategoryList.aspx" >
+      </TreeNode>
+      <TreeNode Text="岗位管理" NavigateUrl="admin/JobKindList.aspx" >
+      </TreeNode>
+  </TreeNode>
+  <TreeNode Text="店面风采管理" SingleClickExpand="true">
+      <TreeNode Text="店面风采管理" NavigateUrl="admin/StorefrontEleganceList.aspx" >
+      </TreeNode>
+      <TreeNode Text="店面展示图片管理" NavigateUrl="admin/StoreImageList.aspx" >
+      </TreeNode>
+  </TreeNode>
+  <TreeNode Text="创业明星管理" SingleClickExpand="true">
+      <TreeNode Text="创业明星管理" NavigateUrl="admin/VentureStarList.aspx" >
+      </TreeNode>
+  </TreeNode>
+  <TreeNode Text="指标管理" SingleClickExpand="true">
+      <TreeNode Text="指标管理" NavigateUrl="admin/IndicatorsList.aspx" >
+      </TreeNode>
+      <TreeNode Text="指标评比管理" NavigateUrl="admin/StoreStatisticsList.aspx" >
+      </TreeNode>
+  </TreeNode>
+  <TreeNode Text="留言管理" SingleClickExpand="true">
+      <TreeNode Text="用户留言管理" NavigateUrl="admin/MessageList.aspx" >
+      </TreeNode>
+  </TreeNode>
+  <TreeNode Text="友情链接管理" SingleClickExpand="true">
+      <TreeNode Text="友情链接管理" NavigateUrl="admin/LinkList.aspx" >
+      </TreeNode>
+  </TreeNode>
+  <TreeNode Text="地区信息管理" SingleClickExpand="true">
+      <TreeNode Text="地区管理" NavigateUrl="admin/RegionList.aspx" >
+      </TreeNode>
+      <TreeNode Text="地区职位管理" NavigateUrl="admin/DefaultPostList.aspx" >
+      </TreeNode>
+  </TreeNode>
+</Tree>
