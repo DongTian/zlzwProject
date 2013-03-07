@@ -1,10 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="WebApp.manage._default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="FineUI.Examples._default" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>后台管理</title>
-    <link href="css/default.css" rel="stylesheet" type="text/css" />
+<!DOCTYPE html>
+<html>
+<head id="Head1" runat="server">
+    <title>职来职往后台管理</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link href="css/default.css" rel="stylesheet" type="tx/css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -31,11 +32,11 @@
                 <Items>
                     <ext:ContentPanel ShowBorder="false" CssClass="header" ShowHeader="false" BodyStyle="background-color:#1C3E7E;"
                         ID="ContentPanel1" runat="server">
-                        <div class="title">
-                            <a href="./default.aspx" style="color:#fff;">后台管理模板</a>
+                        <div class="title" style="font-size:16px; margin-top:5px;">
+                            <a href="./default.aspx" style="color:#fff;text-decoration:none; margin-left:10px; font-weight:bold;">职来职往后台管理</a>
                         </div>
-						<div class="version">
-                            <a href="#" target="_blank" style="color:#fff;">版本1.0</a>
+						<div class="version" style="font-size:16px; float:right; margin-top:-20px; margin-right:10px;">
+                            <a href="../default.aspx" target="_blank" style="color:#fff; font-weight:bold;">网站首页</a>
                         </div>
                     </ext:ContentPanel>
                 </Items>
@@ -77,14 +78,13 @@
             </ext:Region>
         </Regions>
     </ext:RegionPanel>
-    <ext:Window ID="windowSourceCode" Icon="PageWhiteCode" Title="源代码" Popup="false"
+    <ext:Window ID="windowSourceCode" Hidden="true" Icon="PageWhiteCode" Title="源代码" Popup="false"
         EnableIFrame="true" runat="server" IsModal="true" Width="900px" Height="550px"
         EnableClose="true" EnableMaximize="true" EnableResize="true">
     </ext:Window>
     <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="menu.xml"></asp:XmlDataSource>
     </form>
     <img src="images/logo/zlzwlogo.png" alt="职来职往" id="logo" />
-
     <script src="js/default.js" type="text/javascript"></script>
 </body>
 </html>

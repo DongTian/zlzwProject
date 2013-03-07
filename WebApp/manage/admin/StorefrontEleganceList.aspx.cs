@@ -10,7 +10,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
-using ExtAspNet;
+using FineUI;
 
 namespace WebApp.manage.admin
 {
@@ -84,7 +84,7 @@ namespace WebApp.manage.admin
 
         #region 分页事件
 
-        protected void Grid1_PageIndexChange(object sender, ExtAspNet.GridPageEventArgs e)
+        protected void Grid1_PageIndexChange(object sender, FineUI.GridPageEventArgs e)
         {
             grid1.PageIndex = e.NewPageIndex;
 
@@ -126,8 +126,7 @@ namespace WebApp.manage.admin
                 #region 删除逻辑
 
                 zlzw.BLL.StorefrontEleganceListBLL storefrontEleganceListBLL = new zlzw.BLL.StorefrontEleganceListBLL();
-                DataTable dt = storefrontEleganceListBLL.GetList("PartnerGUID='" + strSelectID + "'").Tables[0];
-                zlzw.Model.StorefrontEleganceListModal storefrontEleganceListModal = storefrontEleganceListBLL.GetModel(int.Parse(Get_StorefrontEleganceID(dt.Rows[0]["PartnerID"].ToString())));
+                zlzw.Model.StorefrontEleganceListModal storefrontEleganceListModal = storefrontEleganceListBLL.GetModel(int.Parse(Get_StorefrontEleganceID(strSelectID)));
                 storefrontEleganceListModal.IsEnable = 0;
                 storefrontEleganceListBLL.Update(storefrontEleganceListModal);
                 StorefrontEleganceList_BindGrid();

@@ -35,7 +35,7 @@
                 <div class="blue" style="margin-top: 15px;">
                     <div id="slatenav">
                         <ul>
-                            <li><a id="menuItem01" name="navigateItem" href="" class="current">首页</a></li>
+                            <li><a id="menuItem01" name="navigateItem" href="default.aspx" class="current">首页</a></li>
                             <li><a id="menuItem02" name="navigateItem" href="About/AboutKingStudy.aspx">关于校企</a></li>
                             <li><a id="menuItem03" name="navigateItem" href="DispatchServices/EnterpriseServices.aspx">劳务合作</a></li>
                             <li><a id="menuItem04" name="navigateItem" href="Franchising/ProjectDescription.aspx">加盟连锁</a></li>

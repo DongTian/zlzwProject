@@ -1,22 +1,17 @@
 ﻿using System;
-using System.Collections;
-using System.Configuration;
-using System.Data;
-using System.Linq;
+using System.Collections.Generic;
 using System.Web;
-using System.Web.Security;
 using System.Web.UI;
-using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Xml.Linq;
-using ExtAspNet;
-using Newtonsoft.Json.Linq;
-using System.Xml;
 
-namespace WebApp.manage
+using System.Xml;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Utility;
+
+namespace FineUI.Examples
 {
-    public partial class _default : Utility.PageBase
+    public partial class _default : PageBase
     {
         #region Page_Init
 
@@ -142,9 +137,9 @@ namespace WebApp.manage
         /// 重新设置每个节点的图标
         /// </summary>
         /// <param name="nodes"></param>
-        private void ResolveTreeNode(ExtAspNet.TreeNodeCollection nodes)
+        private void ResolveTreeNode(FineUI.TreeNodeCollection nodes)
         {
-            foreach (ExtAspNet.TreeNode node in nodes)
+            foreach (FineUI.TreeNode node in nodes)
             {
                 if (node.Nodes.Count == 0)
                 {

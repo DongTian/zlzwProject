@@ -29,7 +29,7 @@ namespace WebApp.manage {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.PageManager PageManager1;
+        protected global::FineUI.PageManager PageManager1;
         
         /// <summary>
         /// Window1 控件。
@@ -38,7 +38,7 @@ namespace WebApp.manage {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Window Window1;
+        protected global::FineUI.Window Window1;
         
         /// <summary>
         /// SimpleForm1 控件。
@@ -47,7 +47,7 @@ namespace WebApp.manage {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.SimpleForm SimpleForm1;
+        protected global::FineUI.SimpleForm SimpleForm1;
         
         /// <summary>
         /// txbUserName 控件。
@@ -56,7 +56,7 @@ namespace WebApp.manage {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.TextBox txbUserName;
+        protected global::FineUI.TextBox txbUserName;
         
         /// <summary>
         /// txbPassword 控件。
@@ -65,7 +65,7 @@ namespace WebApp.manage {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.TextBox txbPassword;
+        protected global::FineUI.TextBox txbPassword;
         
         /// <summary>
         /// imgCaptcha 控件。
@@ -74,7 +74,7 @@ namespace WebApp.manage {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Image imgCaptcha;
+        protected global::FineUI.Image imgCaptcha;
         
         /// <summary>
         /// txbCaptcha 控件。
@@ -83,7 +83,7 @@ namespace WebApp.manage {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.TextBox txbCaptcha;
+        protected global::FineUI.TextBox txbCaptcha;
         
         /// <summary>
         /// btnLogin 控件。
@@ -92,6 +92,6 @@ namespace WebApp.manage {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Button btnLogin;
+        protected global::FineUI.Button btnLogin;
     }
 }

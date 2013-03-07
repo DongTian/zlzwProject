@@ -1,1 +1,1 @@
-﻿<%@ WebHandler Language="C#" CodeBehind="captcha.ashx.cs" Class="ExtAspNet.Examples.basic.Captcha.captcha" %>
+﻿<%@ WebHandler Language="C#" CodeBehind="captcha.ashx.cs" Class="FineUI.Examples.basic.Captcha.captcha" %>

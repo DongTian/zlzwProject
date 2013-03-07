@@ -48,20 +48,20 @@ namespace WebApp.manage
         {
             if (txbCaptcha.Text == "")
             {
-                ExtAspNet.Alert.ShowInTop("验证码不能为空");
+                FineUI.Alert.ShowInTop("验证码不能为空");
             }
             if (txbUserName.Text == "")
             {
-                ExtAspNet.Alert.ShowInTop("账号不能为空");
+                FineUI.Alert.ShowInTop("账号不能为空");
                 return;
             }
             if (txbPassword.Text == "")
             {
-                ExtAspNet.Alert.ShowInTop("密码不能为空");
+                FineUI.Alert.ShowInTop("密码不能为空");
             }
             if (txbCaptcha.Text != Session["CaptchaImageText"].ToString())
             {
-                ExtAspNet.Alert.ShowInTop("验证码错误");
+                FineUI.Alert.ShowInTop("验证码错误");
                 return;
             }
             zlzw.BLL.AdminListBLL adminListBLL = new zlzw.BLL.AdminListBLL();
@@ -79,7 +79,7 @@ namespace WebApp.manage
             }
             else
             {
-                ExtAspNet.Alert.ShowInTop("账号或密码错误");
+                FineUI.Alert.ShowInTop("账号或密码错误");
             }
             //if (tbxUserName.Text == "admin" && tbxPassword.Text == "admin")
             //{

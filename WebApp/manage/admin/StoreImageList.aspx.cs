@@ -10,7 +10,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
-using ExtAspNet;
+using FineUI;
 
 namespace WebApp.manage.admin
 {
@@ -82,7 +82,7 @@ namespace WebApp.manage.admin
 
         #region 分页事件
 
-        protected void Grid1_PageIndexChange(object sender, ExtAspNet.GridPageEventArgs e)
+        protected void Grid1_PageIndexChange(object sender, FineUI.GridPageEventArgs e)
         {
             grid1.PageIndex = e.NewPageIndex;
 
@@ -124,7 +124,8 @@ namespace WebApp.manage.admin
                 #region 删除逻辑
 
                 zlzw.BLL.StoreImageListBLL storeImageListBLL = new zlzw.BLL.StoreImageListBLL();
-                zlzw.Model.StoreImageListModal storeImageListModal = storeImageListBLL.GetModel(int.Parse(strSelectID));
+                DataTable dt = storeImageListBLL.GetList("StoreImageGUID='" + strSelectID + "'").Tables[0];
+                zlzw.Model.StoreImageListModal storeImageListModal = storeImageListBLL.GetModel(int.Parse(dt.Rows[0]["StoreImageID"].ToString()));
                 storeImageListModal.IsEnable = 0;
                 storeImageListBLL.Update(storeImageListModal);
                 StoreImageList_BindGrid();

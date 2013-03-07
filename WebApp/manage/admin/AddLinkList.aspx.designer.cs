@@ -29,7 +29,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.PageManager PageManager1;
+        protected global::FineUI.PageManager PageManager1;
         
         /// <summary>
         /// Panel1 控件。
@@ -38,7 +38,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Panel Panel1;
+        protected global::FineUI.Panel Panel1;
         
         /// <summary>
         /// Toolbar1 控件。
@@ -47,7 +47,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Toolbar Toolbar1;
+        protected global::FineUI.Toolbar Toolbar1;
         
         /// <summary>
         /// btnClose 控件。
@@ -56,7 +56,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Button btnClose;
+        protected global::FineUI.Button btnClose;
         
         /// <summary>
         /// btnSaveRefresh 控件。
@@ -65,7 +65,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Button btnSaveRefresh;
+        protected global::FineUI.Button btnSaveRefresh;
         
         /// <summary>
         /// ToolbarFill1 控件。
@@ -74,7 +74,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.ToolbarFill ToolbarFill1;
+        protected global::FineUI.ToolbarFill ToolbarFill1;
         
         /// <summary>
         /// ToolbarText2 控件。
@@ -83,7 +83,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.ToolbarText ToolbarText2;
+        protected global::FineUI.ToolbarText ToolbarText2;
         
         /// <summary>
         /// Panel2 控件。
@@ -92,7 +92,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Panel Panel2;
+        protected global::FineUI.Panel Panel2;
         
         /// <summary>
         /// SimpleForm1 控件。
@@ -101,7 +101,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.SimpleForm SimpleForm1;
+        protected global::FineUI.SimpleForm SimpleForm1;
         
         /// <summary>
         /// drpLinkType 控件。
@@ -110,7 +110,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.DropDownList drpLinkType;
+        protected global::FineUI.DropDownList drpLinkType;
         
         /// <summary>
         /// txbLinkTitle 控件。
@@ -119,7 +119,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.TextBox txbLinkTitle;
+        protected global::FineUI.TextBox txbLinkTitle;
         
         /// <summary>
         /// txbLinkTarget 控件。
@@ -128,7 +128,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.TextBox txbLinkTarget;
+        protected global::FineUI.TextBox txbLinkTarget;
         
         /// <summary>
         /// btnImageUpload 控件。
@@ -137,7 +137,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.FileUpload btnImageUpload;
+        protected global::FineUI.FileUpload btnImageUpload;
         
         /// <summary>
         /// imgLinkImage 控件。
@@ -146,7 +146,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Image imgLinkImage;
+        protected global::FineUI.Image imgLinkImage;
         
         /// <summary>
         /// txbLinkDesc 控件。
@@ -155,6 +155,6 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.TextArea txbLinkDesc;
+        protected global::FineUI.TextArea txbLinkDesc;
     }
 }

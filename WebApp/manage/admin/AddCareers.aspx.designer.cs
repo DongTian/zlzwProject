@@ -29,7 +29,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.PageManager PageManager1;
+        protected global::FineUI.PageManager PageManager1;
         
         /// <summary>
         /// Panel1 控件。
@@ -38,7 +38,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Panel Panel1;
+        protected global::FineUI.Panel Panel1;
         
         /// <summary>
         /// Toolbar1 控件。
@@ -47,7 +47,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Toolbar Toolbar1;
+        protected global::FineUI.Toolbar Toolbar1;
         
         /// <summary>
         /// btnClose 控件。
@@ -56,7 +56,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Button btnClose;
+        protected global::FineUI.Button btnClose;
         
         /// <summary>
         /// btnSaveRefresh 控件。
@@ -65,7 +65,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Button btnSaveRefresh;
+        protected global::FineUI.Button btnSaveRefresh;
         
         /// <summary>
         /// ToolbarFill1 控件。
@@ -74,7 +74,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.ToolbarFill ToolbarFill1;
+        protected global::FineUI.ToolbarFill ToolbarFill1;
         
         /// <summary>
         /// ToolbarText2 控件。
@@ -83,7 +83,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.ToolbarText ToolbarText2;
+        protected global::FineUI.ToolbarText ToolbarText2;
         
         /// <summary>
         /// Panel2 控件。
@@ -92,7 +92,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Panel Panel2;
+        protected global::FineUI.Panel Panel2;
         
         /// <summary>
         /// SimpleForm1 控件。
@@ -101,7 +101,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.SimpleForm SimpleForm1;
+        protected global::FineUI.SimpleForm SimpleForm1;
         
         /// <summary>
         /// drpStoreType 控件。
@@ -110,7 +110,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.DropDownList drpStoreType;
+        protected global::FineUI.DropDownList drpStoreType;
         
         /// <summary>
         /// txbDepartmentName 控件。
@@ -119,7 +119,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.TextBox txbDepartmentName;
+        protected global::FineUI.TextBox txbDepartmentName;
         
         /// <summary>
         /// txbCareersTitle 控件。
@@ -128,7 +128,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.TextBox txbCareersTitle;
+        protected global::FineUI.TextBox txbCareersTitle;
         
         /// <summary>
         /// txbCareersCount 控件。
@@ -137,7 +137,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.TextBox txbCareersCount;
+        protected global::FineUI.TextBox txbCareersCount;
         
         /// <summary>
         /// txbWorkAdd 控件。
@@ -146,7 +146,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.TextBox txbWorkAdd;
+        protected global::FineUI.TextBox txbWorkAdd;
         
         /// <summary>
         /// txbEducational 控件。
@@ -155,7 +155,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.TextBox txbEducational;
+        protected global::FineUI.TextBox txbEducational;
         
         /// <summary>
         /// txbSalary 控件。
@@ -164,7 +164,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.TextBox txbSalary;
+        protected global::FineUI.TextBox txbSalary;
         
         /// <summary>
         /// txbWorkExperience 控件。
@@ -173,7 +173,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.TextBox txbWorkExperience;
+        protected global::FineUI.TextBox txbWorkExperience;
         
         /// <summary>
         /// txbEmail 控件。
@@ -182,7 +182,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.TextBox txbEmail;
+        protected global::FineUI.TextBox txbEmail;
         
         /// <summary>
         /// txbTel 控件。
@@ -191,7 +191,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.TextBox txbTel;
+        protected global::FineUI.TextBox txbTel;
         
         /// <summary>
         /// txbContactMan 控件。
@@ -200,7 +200,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.TextBox txbContactMan;
+        protected global::FineUI.TextBox txbContactMan;
         
         /// <summary>
         /// ckbIsHot 控件。
@@ -209,7 +209,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.CheckBox ckbIsHot;
+        protected global::FineUI.CheckBox ckbIsHot;
         
         /// <summary>
         /// txbResponsibilities 控件。
@@ -218,7 +218,7 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.HtmlEditor txbResponsibilities;
+        protected global::FineUI.HtmlEditor txbResponsibilities;
         
         /// <summary>
         /// txbQualifications 控件。
@@ -227,6 +227,6 @@ namespace WebApp.manage.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.HtmlEditor txbQualifications;
+        protected global::FineUI.HtmlEditor txbQualifications;
     }
 }

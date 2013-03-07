@@ -10,7 +10,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
-using ExtAspNet;
+using FineUI;
 
 namespace WebApp.manage.admin
 {
@@ -84,7 +84,7 @@ namespace WebApp.manage.admin
 
         #region 分页事件
 
-        protected void Grid1_PageIndexChange(object sender, ExtAspNet.GridPageEventArgs e)
+        protected void Grid1_PageIndexChange(object sender, FineUI.GridPageEventArgs e)
         {
             grid1.PageIndex = e.NewPageIndex;
 
@@ -126,7 +126,8 @@ namespace WebApp.manage.admin
                 #region 删除逻辑
 
                 zlzw.BLL.CareersListBLL careersListBLL = new zlzw.BLL.CareersListBLL();
-                zlzw.Model.CareersListModal careersListModel = careersListBLL.GetModel(int.Parse(strSelectID));
+                DataTable dt = careersListBLL.GetList("CareersGUID='" + strSelectID + "'").Tables[0];
+                zlzw.Model.CareersListModal careersListModel = careersListBLL.GetModel(int.Parse(dt.Rows[0]["CareersID"].ToString()));
                 careersListModel.IsEnable = 0;
                 careersListBLL.Update(careersListModel);
                 CareersTypeList_BindGrid();

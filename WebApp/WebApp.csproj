@@ -46,9 +46,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\AspNetPager.dll</HintPath>
     </Reference>
-    <Reference Include="ExtAspNet, Version=3.1.9.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="FineUI, Version=3.2.3.0, Culture=neutral, PublicKeyToken=0ff1835d01c384a9, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\zlzw.jobsite\lib\ExtAspNet.dll</HintPath>
+      <HintPath>..\lib\FineUI.dll</HintPath>
     </Reference>
     <Reference Include="FredCK.FCKeditorV2, Version=2.6.3.20071, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
