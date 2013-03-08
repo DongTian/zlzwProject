@@ -10,10 +10,11 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
+using ExtAspNet;
 
 namespace WebApp.manage
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class Login : Utility.PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -48,20 +49,20 @@ namespace WebApp.manage
         {
             if (txbCaptcha.Text == "")
             {
-                FineUI.Alert.ShowInTop("验证码不能为空");
+                ExtAspNet.Alert.ShowInTop("验证码不能为空");
             }
             if (txbUserName.Text == "")
             {
-                FineUI.Alert.ShowInTop("账号不能为空");
+                ExtAspNet.Alert.ShowInTop("账号不能为空");
                 return;
             }
             if (txbPassword.Text == "")
             {
-                FineUI.Alert.ShowInTop("密码不能为空");
+                ExtAspNet.Alert.ShowInTop("密码不能为空");
             }
             if (txbCaptcha.Text != Session["CaptchaImageText"].ToString())
             {
-                FineUI.Alert.ShowInTop("验证码错误");
+                ExtAspNet.Alert.ShowInTop("验证码错误");
                 return;
             }
             zlzw.BLL.AdminListBLL adminListBLL = new zlzw.BLL.AdminListBLL();
@@ -79,7 +80,7 @@ namespace WebApp.manage
             }
             else
             {
-                FineUI.Alert.ShowInTop("账号或密码错误");
+                ExtAspNet.Alert.ShowInTop("账号或密码错误");
             }
             //if (tbxUserName.Text == "admin" && tbxPassword.Text == "admin")
             //{

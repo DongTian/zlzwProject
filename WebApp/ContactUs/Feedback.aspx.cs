@@ -95,7 +95,7 @@ namespace WebApp
                 messageListModal.PublishContent = textarea.Value;
                 messageListModal.PublishDate = DateTime.Now;
                 messageListModal.IsReply = 0;
-                messageListModal.IsEnable = 0;
+                messageListModal.IsEnable = 1;
                 zlzw.BLL.MessageListBLL messageListBLL = new zlzw.BLL.MessageListBLL();
                 messageListBLL.Add(messageListModal);
                 search.Value = "";

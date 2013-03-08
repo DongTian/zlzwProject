@@ -10,7 +10,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
-using FineUI;
+using ExtAspNet;
 
 namespace WebApp.manage.admin
 {
@@ -21,19 +21,36 @@ namespace WebApp.manage.admin
             if (!IsPostBack)
             {
                 string strType = Request.QueryString["Type"];
-                Load_StoreType();//加载店面类型列表
+                Load_RegionList();
                 LoadData(strType);
             }
             btnClose.OnClientClick = ActiveWindow.GetConfirmHideReference();
             Panel2.Title = DateTime.Now.ToString("yyyy年MM月dd日");
         }
 
-        #region 加载店面类型列表
+        #region 加载区域列表
 
-        private void Load_StoreType()
+        private void Load_RegionList()
         {
             zlzw.BLL.DictionaryListBLL dictionaryListBLL = new zlzw.BLL.DictionaryListBLL();
-            DataTable dt = dictionaryListBLL.GetList("DictionaryCategory='StoreType'").Tables[0];
+            DataTable dt = dictionaryListBLL.GetList("DictionaryCategory='StoreType' and IsEnable=1 order by OrderNumber asc").Tables[0];
+            drpRegionList.DataTextField = "DictionaryValue";
+            drpRegionList.DataValueField = "DictionaryListID";
+
+            drpRegionList.DataSource = dt;
+            drpRegionList.DataBind();
+
+            Load_StoreType(drpRegionList.SelectedValue);
+        }
+
+        #endregion
+
+        #region 加载店面类型列表
+
+        private void Load_StoreType(string strRegionID)
+        {
+            zlzw.BLL.DictionaryListBLL dictionaryListBLL = new zlzw.BLL.DictionaryListBLL();
+            DataTable dt = dictionaryListBLL.GetList("DictionaryCategory='StoreItem' and IsEnable=1 and IsInner=" + strRegionID).Tables[0];
 
             drpStoreType.DataTextField = "DictionaryValue";
             drpStoreType.DataValueField = "DictionaryKey";
@@ -55,6 +72,7 @@ namespace WebApp.manage.admin
                 zlzw.BLL.StoreImageListBLL storeImageListBLL = new zlzw.BLL.StoreImageListBLL();
                 DataTable dt = storeImageListBLL.GetList("StoreImageGUID='" + strID + "'").Tables[0];
                 zlzw.Model.StoreImageListModal storeImageListModal = storeImageListBLL.GetModel(int.Parse(dt.Rows[0]["StoreImageID"].ToString()));
+                drpRegionList.SelectedValue = storeImageListModal.Other01.ToString();
                 drpStoreType.SelectedValue = storeImageListModal.DictionaryKey;//所属门店
                 txbStoreImageTitle.Text = storeImageListModal.StoreImageTitle;//门店名称
                 txbStoreImageDesc.Text = storeImageListModal.StoreImageDesc;//门店简介
@@ -79,6 +97,7 @@ namespace WebApp.manage.admin
             {
                 //编辑保存
                 zlzw.Model.StoreImageListModal storeImageListModal = new zlzw.Model.StoreImageListModal();
+                storeImageListModal.Other01 = drpRegionList.SelectedValue;
                 storeImageListModal.DictionaryKey = drpStoreType.SelectedValue;//所属门店
                 storeImageListModal.StoreImageTitle = txbStoreImageTitle.Text;//门店名称
                 storeImageListModal.StoreImageDesc = txbStoreImageDesc.Text;//合作伙伴简介
@@ -105,6 +124,7 @@ namespace WebApp.manage.admin
                 //添加保存
 
                 zlzw.Model.StoreImageListModal storeImageListModal = new zlzw.Model.StoreImageListModal();
+                storeImageListModal.Other01 = drpRegionList.SelectedValue;
                 storeImageListModal.DictionaryKey = drpStoreType.SelectedValue;//所属门店
                 storeImageListModal.StoreImageTitle = txbStoreImageTitle.Text;//门店名称
                 storeImageListModal.StoreImageDesc = txbStoreImageDesc.Text;//合作伙伴简介
@@ -145,5 +165,10 @@ namespace WebApp.manage.admin
         }
 
         #endregion
+
+        protected void drpRegionList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Load_StoreType(drpRegionList.SelectedValue);
+        }
     }
 }

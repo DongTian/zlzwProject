@@ -43,6 +43,32 @@ namespace WebApp.Franchising
             }
         }
 
+        private int nIsMenuItem = 0;
+        public int IsMneuItem
+        {
+            set
+            {
+                nIsMenuItem = value;
+            }
+            get
+            {
+                return nIsMenuItem;
+            }
+        }
+
+        private int nIsMenuItemSelect = 0;
+        public int IsMenuItemSelect 
+        {
+            set
+            {
+                nIsMenuItemSelect = value;
+            }
+            get
+            {
+                return nIsMenuItemSelect;
+            }
+        }
+
         #endregion
 
         #region 加载店面菜单列表
@@ -50,7 +76,7 @@ namespace WebApp.Franchising
         private void Load_StoreMenuList()
         {
             zlzw.BLL.DictionaryListBLL dictionaryListBLL = new zlzw.BLL.DictionaryListBLL();
-            DataTable dt = dictionaryListBLL.GetList("DictionaryCategory='StoreType' and IsEnable=1").Tables[0];
+            DataTable dt = dictionaryListBLL.GetList("DictionaryCategory='StoreType' and IsEnable=1 order by OrderNumber asc").Tables[0];
             string strStoreKey = dt.Rows[0]["DictionaryKey"].ToString();
             
             Repeater1.DataSource = dt;
@@ -90,23 +116,27 @@ namespace WebApp.Franchising
             {
                 if (nIsDefault == 0)
                 {
-                    labMenuContent.Text = "<a style='text-decoration:none;' href='StorefrontEleganceList.aspx?type=" + drv["DictionaryKey"].ToString() + "'><dt class='expand1' style='color:#314777;'>" + drv["DictionaryValue"].ToString() + "</dt></a>";
+                    labMenuContent.Text = "<dt class='expand1' style='color:#314777;'>" + drv["DictionaryValue"].ToString() + "</dt>";
+                    labMenuContent.Text += Get_StoreList(drv["DictionaryListID"].ToString());
                     nIsDefault = 1;
                 }
                 else
                 {
-                    labMenuContent.Text = "<a style='text-decoration:none;' href='StorefrontEleganceList.aspx?type=" + drv["DictionaryKey"].ToString() + "'><dt class='original1'>" + drv["DictionaryValue"].ToString() + "</dt></a>";
+                    labMenuContent.Text = "<dt class='original1'>" + drv["DictionaryValue"].ToString() + "</dt>";
+                    labMenuContent.Text += Get_StoreList(drv["DictionaryListID"].ToString());
                 }
             }
             else
             {
-                if (Request.QueryString["type"] == drv["DictionaryKey"].ToString())
+                if (Request.QueryString["reg"] == drv["DictionaryKey"].ToString())
                 {
-                    labMenuContent.Text = "<a style='text-decoration:none;' class='h_hover2' href='StorefrontEleganceList.aspx?type=" + drv["DictionaryKey"].ToString() + "'><dt class='expand1' style='color:#314777;'>" + drv["DictionaryValue"].ToString() + "</dt></a>";
+                    labMenuContent.Text = "<dt class='expand1' style='color:#314777;'>" + drv["DictionaryValue"].ToString() + "</dt>";
+                    labMenuContent.Text += Get_StoreList(drv["DictionaryListID"].ToString());
                 }
                 else
                 {
-                    labMenuContent.Text = "<a style='text-decoration:none;' href='StorefrontEleganceList.aspx?type=" + drv["DictionaryKey"].ToString() + "'><dt class='original1'>" + drv["DictionaryValue"].ToString() + "</dt></a>";
+                    labMenuContent.Text = "<dt class='original1'>" + drv["DictionaryValue"].ToString() + "</dt>";
+                    labMenuContent.Text += Get_StoreList(drv["DictionaryListID"].ToString());
                 }
             }
 
@@ -123,6 +153,66 @@ namespace WebApp.Franchising
 
             DataList1.DataSource = dt;
             DataList1.DataBind();
+        }
+
+        #endregion
+
+        #region 获取区域下的所有店面
+
+        private string Get_StoreList(string strRegionCode)
+        {
+            zlzw.BLL.DictionaryListBLL dictionaryListBLL = new zlzw.BLL.DictionaryListBLL();
+            DataTable dt = dictionaryListBLL.GetList("IsInner=" + strRegionCode + " and DictionaryCategory='StoreItem' and IsEnable=1 order by OrderNumber asc").Tables[0];
+            if (dt.Rows.Count > 0)
+            {
+                System.Text.StringBuilder strBuilder = new System.Text.StringBuilder();
+                if (IsMneuItem == 0 && Request.QueryString["reg"] == Get_BaseKey(dt.Rows[0]["IsInner"].ToString()))
+                {
+                    strBuilder.Append("<dd style='display:block;'>");
+                    for (int nCount = 0; nCount < dt.Rows.Count; nCount++)
+                    {
+                        if (IsMenuItemSelect == 0 && Request.QueryString["type"] == dt.Rows[nCount]["DictionaryKey"].ToString())
+                        {
+                            strBuilder.Append("<a style='text-decoration:none;' class='h_hover2' href='StorefrontEleganceList.aspx?type=" + dt.Rows[nCount]["DictionaryKey"].ToString() + "&reg=" + Get_BaseKey(dt.Rows[0]["IsInner"].ToString()) + "'>" + dt.Rows[nCount]["DictionaryValue"].ToString() + "</a>");
+                            IsMenuItemSelect = 1;
+                        }
+                        else
+                        {
+                            strBuilder.Append("<a style='text-decoration:none;' class='' href='StorefrontEleganceList.aspx?type=" + dt.Rows[nCount]["DictionaryKey"].ToString() + "&reg=" + Get_BaseKey(dt.Rows[0]["IsInner"].ToString()) + "'>" + dt.Rows[nCount]["DictionaryValue"].ToString() + "</a>");
+                        }
+                        IsMneuItem = 1;
+                    }
+                    
+                }
+                else
+                {
+                    strBuilder.Append("<dd style='display:none;'>");
+                    for (int nCount = 0; nCount < dt.Rows.Count; nCount++)
+                    {
+                        strBuilder.Append("<a style='text-decoration:none;' class='' href='StorefrontEleganceList.aspx?type=" + dt.Rows[nCount]["DictionaryKey"].ToString() + "&reg=" + Get_BaseKey(dt.Rows[0]["IsInner"].ToString()) + "'>" + dt.Rows[nCount]["DictionaryValue"].ToString() + "</a>");
+                    }
+                }
+                
+                strBuilder.Append("</dd>");
+
+                return strBuilder.ToString();
+            }
+            else
+            {
+                return "";
+            }
+        }
+
+        #endregion
+
+        #region 获取父类key
+
+        private string Get_BaseKey(string strID)
+        {
+            zlzw.BLL.DictionaryListBLL dictionaryListBLL = new zlzw.BLL.DictionaryListBLL();
+            zlzw.Model.DictionaryListModel dictionaryListModel = dictionaryListBLL.GetModel(int.Parse(strID));
+
+            return dictionaryListModel.DictionaryKey;
         }
 
         #endregion

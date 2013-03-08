@@ -5,7 +5,7 @@ using System.Web.Services;
 using System.Web.SessionState;
 using System.Drawing.Imaging;
 
-namespace FineUI.Examples.basic.Captcha
+namespace ExtAspNet.Examples.basic.Captcha
 {
     /// <summary>
     /// 生成验证码图片

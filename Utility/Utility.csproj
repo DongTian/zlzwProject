@@ -39,8 +39,8 @@
     <Reference Include="AspNetPager">
       <HintPath>..\..\zlzw.jobsite\lib\AspNetPager.dll</HintPath>
     </Reference>
-    <Reference Include="FineUI">
-      <HintPath>..\lib\FineUI.dll</HintPath>
+    <Reference Include="ExtAspNet">
+      <HintPath>..\lib\ExtAspNet.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

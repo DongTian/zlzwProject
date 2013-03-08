@@ -29,6 +29,7 @@
                 EnableRowNumber="True" IsDatabasePaging="true" 
                 OnRowDataBound="Grid1_RowDataBound" ForceFitAllTime="true" AutoPostBack="False">
                 <Columns>
+                    <ext:BoundField Width="150px" DataField="IsInner" HeaderText="所属区域" TextAlign="Center" />
                     <ext:BoundField Width="200px" DataField="DictionaryValue" HeaderText="门店名称" TextAlign="Center" />
                     <ext:BoundField Width="200px" DataField="DictionaryKey" HeaderText="门店索引" TextAlign="Center" />
                     <ext:BoundField Width="200px" DataField="DictionaryDesc" HeaderText="门店简介" TextAlign="Center" />

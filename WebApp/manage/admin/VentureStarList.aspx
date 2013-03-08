@@ -29,7 +29,8 @@
                 EnableRowNumber="True" IsDatabasePaging="true" 
                 OnRowDataBound="Grid1_RowDataBound" ForceFitAllTime="true">
                 <Columns>
-                    <ext:BoundField Width="150px" DataField="DictionaryKey" HeaderText="所在店面" TextAlign="Center"/>
+                    <ext:BoundField Width="150px" DataField="Other01" HeaderText="所属区域" TextAlign="Center" />
+                    <ext:BoundField Width="150px" DataField="DictionaryKey" HeaderText="所属店面" TextAlign="Center"/>
                     <ext:BoundField Width="80px" DataField="VentureStarName" HeaderText="姓名" TextAlign="Center"/>
                     <ext:BoundField Width="200px" DataField="VentureStarContent" HeaderText="简介" DataToolTipField="VentureStarContent"  />
                     <ext:BoundField Width="150px" DataField="publishdate" HeaderText="发布日期" TextAlign="Center" DataFormatString="{0:yyyy年MM月dd日}" />

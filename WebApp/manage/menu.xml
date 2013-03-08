@@ -23,8 +23,6 @@
         </TreeNode>
     </TreeNode>
     <TreeNode Text="诚聘英才管理" SingleClickExpand="true">
-        <TreeNode Text="门店管理" NavigateUrl="admin/StoreTypeList.aspx" >
-        </TreeNode>
         <TreeNode Text="诚聘英才管理" NavigateUrl="admin/CareersList.aspx" >
         </TreeNode>
     </TreeNode>
@@ -35,6 +33,10 @@
       </TreeNode>
   </TreeNode>
   <TreeNode Text="店面风采管理" SingleClickExpand="true">
+      <TreeNode Text="所属区域管理" NavigateUrl="admin/RegionStoreList.aspx" >
+      </TreeNode>
+      <TreeNode Text="门店管理" NavigateUrl="admin/StoreTypeList.aspx" >
+      </TreeNode>
       <TreeNode Text="店面风采管理" NavigateUrl="admin/StorefrontEleganceList.aspx" >
       </TreeNode>
       <TreeNode Text="店面展示图片管理" NavigateUrl="admin/StoreImageList.aspx" >

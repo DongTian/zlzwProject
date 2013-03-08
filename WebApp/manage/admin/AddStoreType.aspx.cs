@@ -10,7 +10,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
-using FineUI;
+using ExtAspNet;
 
 namespace WebApp.manage.admin
 {
@@ -21,11 +21,27 @@ namespace WebApp.manage.admin
             if (!IsPostBack)
             {
                 string strType = Request.QueryString["Type"];
+                Laod_RegionList();//加载所属区域
                 LoadData(strType);
             }
             btnClose.OnClientClick = ActiveWindow.GetConfirmHideReference();
             Panel2.Title = DateTime.Now.ToString("yyyy年MM月dd日");
         }
+
+        #region 绑定所属区域列表
+
+        private void Laod_RegionList()
+        {
+            zlzw.BLL.DictionaryListBLL dictionaryListBLL = new zlzw.BLL.DictionaryListBLL();
+            DataTable dt = dictionaryListBLL.GetList("DictionaryCategory='StoreType' and IsEnable=1").Tables[0];
+            drpRegionStoreList.DataTextField = "DictionaryValue";
+            drpRegionStoreList.DataValueField = "DictionaryListID";
+
+            drpRegionStoreList.DataSource = dt;
+            drpRegionStoreList.DataBind();
+        }
+
+        #endregion
 
         #region 加载门店信息
 
@@ -36,6 +52,7 @@ namespace WebApp.manage.admin
                 string strID = Request.QueryString["value"];//操作ID
                 zlzw.BLL.DictionaryListBLL dictionaryListBLL = new zlzw.BLL.DictionaryListBLL();
                 zlzw.Model.DictionaryListModel dictionaryListModel = dictionaryListBLL.GetModel(int.Parse(strID));
+                drpRegionStoreList.SelectedValue = dictionaryListModel.IsInner.ToString();//所属区域ID
                 txbNewsTypeIndex.Text = dictionaryListModel.DictionaryKey;//门店索引
                 txbNewsTypeName.Text = dictionaryListModel.DictionaryValue;//门店名称
                 txbOrderNumber.Text = dictionaryListModel.OrderNumber.ToString();//门店排序
@@ -56,11 +73,12 @@ namespace WebApp.manage.admin
             {
                 //编辑保存
                 zlzw.Model.DictionaryListModel dictionaryListModel = new zlzw.Model.DictionaryListModel();
+                dictionaryListModel.IsInner = int.Parse(drpRegionStoreList.SelectedValue);
                 dictionaryListModel.DictionaryValue = txbNewsTypeName.Text;
                 dictionaryListModel.DictionaryKey = txbNewsTypeIndex.Text;
                 dictionaryListModel.OrderNumber = int.Parse(txbOrderNumber.Text);
                 dictionaryListModel.DictionaryDesc = txbDictionaryDesc.Text;
-                dictionaryListModel.DictionaryCategory = "StoreType";
+                dictionaryListModel.DictionaryCategory = "StoreItem";
                 dictionaryListModel.IsEnable = 1;
                 dictionaryListModel.PublishDate = DateTime.Parse(ViewState["PublishDate"].ToString());
                 dictionaryListModel.DictionaryListID = int.Parse(Request.QueryString["value"]);
@@ -72,13 +90,13 @@ namespace WebApp.manage.admin
                 //添加保存
 
                 zlzw.Model.DictionaryListModel dictionaryListModel = new zlzw.Model.DictionaryListModel();
+                dictionaryListModel.IsInner = int.Parse(drpRegionStoreList.SelectedValue);
                 dictionaryListModel.DictionaryValue = txbNewsTypeName.Text;
                 dictionaryListModel.DictionaryKey = txbNewsTypeIndex.Text;
                 dictionaryListModel.OrderNumber = int.Parse(txbOrderNumber.Text);
                 dictionaryListModel.DictionaryDesc = txbDictionaryDesc.Text;
                 dictionaryListModel.IsEnable = 1;
-                dictionaryListModel.IsInner = 0;
-                dictionaryListModel.DictionaryCategory = "StoreType";
+                dictionaryListModel.DictionaryCategory = "StoreItem";
 
                 dictionaryListModel.PublishDate = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"));
 

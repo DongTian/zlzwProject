@@ -10,7 +10,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
-using FineUI;
+using ExtAspNet;
 
 namespace WebApp.manage.admin
 {
@@ -21,19 +21,36 @@ namespace WebApp.manage.admin
             if (!IsPostBack)
             {
                 string strType = Request.QueryString["Type"];
-                Load_StoreType();//加载店面列表
+                Load_RegionList();//加载区域列表
                 LoadData(strType);
             }
             btnClose.OnClientClick = ActiveWindow.GetConfirmHideReference();
             Panel2.Title = DateTime.Now.ToString("yyyy年MM月dd日");
         }
 
-        #region 加载所属店面
+        #region 加载区域列表
 
-        private void Load_StoreType()
+        private void Load_RegionList()
         {
             zlzw.BLL.DictionaryListBLL dictionaryListBLL = new zlzw.BLL.DictionaryListBLL();
-            DataTable dt = dictionaryListBLL.GetList("DictionaryCategory='StoreType'").Tables[0];
+            DataTable dt = dictionaryListBLL.GetList("DictionaryCategory='StoreType' and IsEnable=1 order by OrderNumber asc").Tables[0];
+            drpRegionList.DataTextField = "DictionaryValue";
+            drpRegionList.DataValueField = "DictionaryListID";
+
+            drpRegionList.DataSource = dt;
+            drpRegionList.DataBind();
+
+            Load_StoreType(drpRegionList.SelectedValue);
+        }
+
+        #endregion
+
+        #region 加载所属店面
+
+        private void Load_StoreType(string strRegionID)
+        {
+            zlzw.BLL.DictionaryListBLL dictionaryListBLL = new zlzw.BLL.DictionaryListBLL();
+            DataTable dt = dictionaryListBLL.GetList("DictionaryCategory='StoreItem' and IsEnable=1 and IsInner=" + strRegionID).Tables[0];
 
             drpStoreType.DataTextField = "DictionaryValue";
             drpStoreType.DataValueField = "DictionaryKey";
@@ -44,7 +61,12 @@ namespace WebApp.manage.admin
 
         #endregion
 
-        #region 加载合作伙伴信息
+        protected void drpRegionList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Load_StoreType(drpRegionList.SelectedValue);
+        }
+
+        #region 加载创业明星信息
 
         private void LoadData(string strType)
         {
@@ -54,6 +76,7 @@ namespace WebApp.manage.admin
                 zlzw.BLL.VentureStarListBLL ventureStarListBLL = new zlzw.BLL.VentureStarListBLL();
                 DataTable dt = ventureStarListBLL.GetList("VentureStarGUID='" + strID + "'").Tables[0];
                 zlzw.Model.VentureStarListModal ventureStarListModal = ventureStarListBLL.GetModel(int.Parse(dt.Rows[0]["VentureStarID"].ToString()));
+                drpRegionList.SelectedValue = ventureStarListModal.Other01.ToString();
                 drpStoreType.SelectedValue = ventureStarListModal.DictionaryKey;//所属门店
                 txbVentureStarName.Text = ventureStarListModal.VentureStarName;//创业明星姓名
                 FCKeditor1.Value = ventureStarListModal.VentureStarContent;//创业明星介绍
@@ -76,6 +99,7 @@ namespace WebApp.manage.admin
             {
                 //编辑保存
                 zlzw.Model.VentureStarListModal ventureStarListModal = new zlzw.Model.VentureStarListModal();
+                ventureStarListModal.Other01 = drpRegionList.SelectedValue;
                 ventureStarListModal.DictionaryKey = drpStoreType.SelectedValue;//所属门店
                 ventureStarListModal.VentureStarName = txbVentureStarName.Text;//创业明星姓名
                 ventureStarListModal.VentureStarContent = FCKeditor1.Value;//创业明星介绍
@@ -102,6 +126,7 @@ namespace WebApp.manage.admin
                 //添加保存
 
                 zlzw.Model.VentureStarListModal ventureStarListModal = new zlzw.Model.VentureStarListModal();
+                ventureStarListModal.Other01 = drpRegionList.SelectedValue;
                 ventureStarListModal.DictionaryKey = drpStoreType.SelectedValue;//所属门店
                 ventureStarListModal.VentureStarName = txbVentureStarName.Text;//创业明星姓名
                 ventureStarListModal.VentureStarContent = FCKeditor1.Value;//创业明星介绍

@@ -10,7 +10,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
-using FineUI;
+using ExtAspNet;
 
 namespace WebApp.manage.admin
 {
@@ -21,25 +21,45 @@ namespace WebApp.manage.admin
             if (!IsPostBack)
             {
                 string strType = Request.QueryString["Type"];
-                Load_StoreList();//加载店面列表
+                Load_RegionList();//加载所属区域
                 LoadData(strType);
+                
             }
             btnClose.OnClientClick = ActiveWindow.GetConfirmHideReference();
             Panel2.Title = DateTime.Now.ToString("yyyy年MM月dd日");
         }
 
-        #region 加载店面列表
+        #region 加载区域列表
 
-        private void Load_StoreList()
+        private void Load_RegionList()
         {
             zlzw.BLL.DictionaryListBLL dictionaryListBLL = new zlzw.BLL.DictionaryListBLL();
-            DataTable dt = dictionaryListBLL.GetList("DictionaryCategory='StoreType'").Tables[0];
+            DataTable dt = dictionaryListBLL.GetList("DictionaryCategory='StoreType' and IsEnable=1 order by OrderNumber asc").Tables[0];
+            drpRegionList.DataTextField = "DictionaryValue";
+            drpRegionList.DataValueField = "DictionaryListID";
+
+            drpRegionList.DataSource = dt;
+            drpRegionList.DataBind();
+
+            Load_StoreList(drpRegionList.SelectedValue);
+        }
+
+        #endregion
+
+        #region 加载店面列表
+
+        private void Load_StoreList(string strRegionID)
+        {
+            zlzw.BLL.DictionaryListBLL dictionaryListBLL = new zlzw.BLL.DictionaryListBLL();
+            DataTable dt = dictionaryListBLL.GetList("DictionaryCategory='StoreItem' and IsEnable=1 and IsInner=" + strRegionID).Tables[0];
 
             drpStorefrontEleganceType.DataTextField = "DictionaryValue";
             drpStorefrontEleganceType.DataValueField = "DictionaryKey";
 
             drpStorefrontEleganceType.DataSource = dt;
             drpStorefrontEleganceType.DataBind();
+
+            txbStorefrontEleganceTitle.Text = drpStorefrontEleganceType.Items[0].Text;
         }
 
         #endregion
@@ -55,6 +75,7 @@ namespace WebApp.manage.admin
                 DataTable dt = storefrontEleganceListBLL.GetList("StorefrontEleganceGUID='" + strID + "'").Tables[0];
                 zlzw.Model.StorefrontEleganceListModal storefrontEleganceListModal = storefrontEleganceListBLL.GetModel(int.Parse(dt.Rows[0]["StorefrontEleganceID"].ToString()));
 
+                drpRegionList.SelectedValue = storefrontEleganceListModal.Other01.ToString();
                 drpStorefrontEleganceType.SelectedValue = storefrontEleganceListModal.DictionaryKey;//所属店铺
                 txbStorefrontEleganceTitle.Text = storefrontEleganceListModal.StorefrontEleganceTitle;//店铺名称
                 txbStorefrontEleganceDescription.Text = storefrontEleganceListModal.StorefrontEleganceDescription;//店铺简介
@@ -79,6 +100,7 @@ namespace WebApp.manage.admin
                 //编辑保存
                 zlzw.Model.StorefrontEleganceListModal storefrontEleganceListModal = new zlzw.Model.StorefrontEleganceListModal();
                 storefrontEleganceListModal.StorefrontEleganceGUID = new Guid(ViewState["StorefrontEleganceGUID"].ToString());//店面风采GUID
+                storefrontEleganceListModal.Other01 = drpRegionList.SelectedValue;
                 storefrontEleganceListModal.DictionaryKey = drpStorefrontEleganceType.SelectedValue;//所属门店
                 storefrontEleganceListModal.StorefrontEleganceTitle = txbStorefrontEleganceTitle.Text;//门店名称
                 storefrontEleganceListModal.StorefrontEleganceDescription = txbStorefrontEleganceDescription.Text;//门店简介
@@ -106,6 +128,7 @@ namespace WebApp.manage.admin
 
                 zlzw.Model.StorefrontEleganceListModal storefrontEleganceListModal = new zlzw.Model.StorefrontEleganceListModal();
                 storefrontEleganceListModal.DictionaryKey = drpStorefrontEleganceType.SelectedValue;//所属门店
+                storefrontEleganceListModal.Other01 = drpRegionList.SelectedValue;
                 storefrontEleganceListModal.StorefrontEleganceTitle = txbStorefrontEleganceTitle.Text;//门店名称
                 storefrontEleganceListModal.StorefrontEleganceDescription = txbStorefrontEleganceDescription.Text;//门店简介
                 storefrontEleganceListModal.PushJobs = txbPushJobs.Text;//主推岗位
@@ -145,5 +168,15 @@ namespace WebApp.manage.admin
         }
 
         #endregion
+
+        protected void drpRegionList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Load_StoreList(drpRegionList.SelectedValue);
+        }
+
+        protected void drpStorefrontEleganceType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txbStorefrontEleganceTitle.Text = drpStorefrontEleganceType.SelectedText;
+        }
     }
 }

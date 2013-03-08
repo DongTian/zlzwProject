@@ -10,7 +10,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
-using FineUI;
+using ExtAspNet;
 
 namespace WebApp.manage.admin
 {
@@ -44,7 +44,7 @@ namespace WebApp.manage.admin
             }
             else
             {
-                drpStoreType.Items.Add(new FineUI.ListItem("-- 门店信息尚未添加 --", "-1"));
+                drpStoreType.Items.Add(new ExtAspNet.ListItem("-- 门店信息尚未添加 --", "-1"));
             }
         }
 

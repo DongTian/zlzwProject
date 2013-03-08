@@ -46,9 +46,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\AspNetPager.dll</HintPath>
     </Reference>
-    <Reference Include="FineUI, Version=3.2.3.0, Culture=neutral, PublicKeyToken=0ff1835d01c384a9, processorArchitecture=MSIL">
+    <Reference Include="ExtAspNet, Version=3.1.9.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\FineUI.dll</HintPath>
+      <HintPath>..\lib\ExtAspNet.dll</HintPath>
     </Reference>
     <Reference Include="FredCK.FCKeditorV2, Version=2.6.3.20071, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -1809,11 +1809,13 @@
     <Content Include="manage\admin\AddNews.aspx" />
     <Content Include="manage\admin\AddNewsType.aspx" />
     <Content Include="manage\admin\AddPartnersJobList.aspx" />
+    <Content Include="manage\admin\AddRegionStore.aspx" />
     <Content Include="manage\admin\AdminList.aspx" />
     <Content Include="manage\admin\MessageList.aspx" />
     <Content Include="manage\admin\NewsList.aspx" />
     <Content Include="manage\admin\NewsTypeList.aspx" />
     <Content Include="manage\admin\PartnersJobList.aspx" />
+    <Content Include="manage\admin\RegionStoreList.aspx" />
     <Content Include="manage\css\default.css" />
     <Content Include="manage\css\main.css" />
     <Content Include="Default.aspx" />
@@ -3161,6 +3163,7 @@
     <Content Include="PartnerTemplates\JobList.html" />
     <Content Include="Resources\images\case01.jpg" />
     <Content Include="Resources\images\case02.jpg" />
+    <Content Include="Resources\images\lwpqlct.jpg" />
     <Content Include="Resources\images\yqzj01.jpg" />
     <Content Include="Resources\images\yqzj02.jpg" />
     <Content Include="Resources\images\yqzj03.jpg" />
@@ -3538,6 +3541,13 @@
     <Compile Include="manage\admin\AddRegion.aspx.designer.cs">
       <DependentUpon>AddRegion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="manage\admin\AddRegionStore.aspx.cs">
+      <DependentUpon>AddRegionStore.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manage\admin\AddRegionStore.aspx.designer.cs">
+      <DependentUpon>AddRegionStore.aspx</DependentUpon>
+    </Compile>
     <Compile Include="manage\admin\AddSpecialTopic.aspx.cs">
       <DependentUpon>AddSpecialTopic.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3684,6 +3694,13 @@
     </Compile>
     <Compile Include="manage\admin\RegionList.aspx.designer.cs">
       <DependentUpon>RegionList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manage\admin\RegionStoreList.aspx.cs">
+      <DependentUpon>RegionStoreList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manage\admin\RegionStoreList.aspx.designer.cs">
+      <DependentUpon>RegionStoreList.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage\admin\SpecialTopicList.aspx.cs">
       <DependentUpon>SpecialTopicList.aspx</DependentUpon>

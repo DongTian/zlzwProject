@@ -29,6 +29,7 @@
                 EnableRowNumber="True" IsDatabasePaging="true" 
                 OnRowDataBound="Grid1_RowDataBound" ForceFitAllTime="true">
                 <Columns>
+                    <ext:BoundField Width="150px" DataField="Other01" HeaderText="所属区域" TextAlign="Center"/>
                     <ext:BoundField Width="150px" DataField="DictionaryKey" HeaderText="所属门店" TextAlign="Center" />
                     <ext:BoundField Width="100px" DataField="StoreImageTitle" HeaderText="图片名称" TextAlign="Center" />
                     <ext:BoundField Width="200px" DataField="StoreImageDesc" HeaderText="图片介绍" TextAlign="Center" />

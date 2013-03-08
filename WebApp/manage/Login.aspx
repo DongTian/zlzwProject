@@ -9,7 +9,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <ext:pagemanager id="PageManager1" runat="server" Theme="Gray" />
+    <ext:PageManager id="PageManager1" runat="server" Theme="Gray" />
     <ext:window id="Window1" runat="server" title="用户登录" ismodal="false" enableclose="false"
         windowposition="GoldenSection" width="350px">
         <Items>

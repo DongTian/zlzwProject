@@ -10,7 +10,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
-using FineUI;
+using ExtAspNet;
 
 namespace WebApp.manage.admin
 {
@@ -75,7 +75,8 @@ namespace WebApp.manage.admin
                 txbStoreStatisticsDate.Text = storeStatisticsListModal.StoreStatisticsDate.ToString();//评比日期
                 txbIndexValue.Text = storeStatisticsListModal.IndexValue;//指标数值
                 txbStoreStatisticsOrder.Text = storeStatisticsListModal.StoreStatisticsOrder.ToString();//排序序号
-                
+
+                ViewState["StoreStatisticsDate"] = storeStatisticsListModal.StoreStatisticsDate.ToString();
                 ViewState["PublishDate"] = storeStatisticsListModal.PublishDate.ToString();
                 ViewState["StoreStatisticsGUID"] = storeStatisticsListModal.StoreStatisticsGUID.ToString();
                 ToolbarText2.Text = "编辑一个指标评比";
@@ -95,7 +96,15 @@ namespace WebApp.manage.admin
                 zlzw.Model.StoreStatisticsListModal storeStatisticsListModal = new zlzw.Model.StoreStatisticsListModal();
                 storeStatisticsListModal.StoreDictionaryKey = drpStoreDictionaryKey.SelectedValue;
                 storeStatisticsListModal.DictionaryKey = drpDictionaryKey.SelectedValue;
-                storeStatisticsListModal.StoreStatisticsDate = DateTime.Parse(txbStoreStatisticsDate.Text.ToString());
+                if (txbStoreStatisticsDate.Text == "")
+                {
+                    storeStatisticsListModal.StoreStatisticsDate = DateTime.Parse(ViewState["StoreStatisticsDate"].ToString());
+                }
+                else
+                {
+                    storeStatisticsListModal.StoreStatisticsDate = DateTime.Parse(txbStoreStatisticsDate.Text.ToString());
+                }
+                
                 storeStatisticsListModal.IndexValue = txbIndexValue.Text;
                 storeStatisticsListModal.StoreStatisticsOrder = int.Parse(txbStoreStatisticsOrder.Text);
                 storeStatisticsListModal.IsEnable = 1;

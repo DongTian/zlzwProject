@@ -59,7 +59,7 @@
                         <%--<dd>
                             <a href="VentureStarList.aspx">创业明星</a>
                         </dd>--%>
-                        <a style='text-decoration:none;' href="StorefrontEleganceList.aspx"><dt class="original1">店面风采</dt></a>
+                        <asp:Label ID="lab10" runat="server"></asp:Label>
                         <%--<dd>
                             <a href="StorefrontEleganceList.aspx">店面风采</a>
                         </dd>--%>

@@ -7,7 +7,7 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace FineUI.Examples {
+namespace ExtAspNet.Examples {
     
     
     public partial class _default {
@@ -37,7 +37,7 @@ namespace FineUI.Examples {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.PageManager PageManager1;
+        protected global::ExtAspNet.PageManager PageManager1;
         
         /// <summary>
         /// RegionPanel1 控件。
@@ -46,7 +46,7 @@ namespace FineUI.Examples {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.RegionPanel RegionPanel1;
+        protected global::ExtAspNet.RegionPanel RegionPanel1;
         
         /// <summary>
         /// Region1 控件。
@@ -55,7 +55,7 @@ namespace FineUI.Examples {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Region Region1;
+        protected global::ExtAspNet.Region Region1;
         
         /// <summary>
         /// Toolbar1 控件。
@@ -64,7 +64,7 @@ namespace FineUI.Examples {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Toolbar Toolbar1;
+        protected global::ExtAspNet.Toolbar Toolbar1;
         
         /// <summary>
         /// btnExpandAll 控件。
@@ -73,7 +73,7 @@ namespace FineUI.Examples {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button btnExpandAll;
+        protected global::ExtAspNet.Button btnExpandAll;
         
         /// <summary>
         /// btnCollapseAll 控件。
@@ -82,7 +82,7 @@ namespace FineUI.Examples {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button btnCollapseAll;
+        protected global::ExtAspNet.Button btnCollapseAll;
         
         /// <summary>
         /// ToolbarFill1 控件。
@@ -91,7 +91,7 @@ namespace FineUI.Examples {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.ToolbarFill ToolbarFill1;
+        protected global::ExtAspNet.ToolbarFill ToolbarFill1;
         
         /// <summary>
         /// ContentPanel1 控件。
@@ -100,7 +100,7 @@ namespace FineUI.Examples {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.ContentPanel ContentPanel1;
+        protected global::ExtAspNet.ContentPanel ContentPanel1;
         
         /// <summary>
         /// Region2 控件。
@@ -109,7 +109,7 @@ namespace FineUI.Examples {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Region Region2;
+        protected global::ExtAspNet.Region Region2;
         
         /// <summary>
         /// mainRegion 控件。
@@ -118,7 +118,7 @@ namespace FineUI.Examples {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Region mainRegion;
+        protected global::ExtAspNet.Region mainRegion;
         
         /// <summary>
         /// mainTabStrip 控件。
@@ -127,7 +127,7 @@ namespace FineUI.Examples {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.TabStrip mainTabStrip;
+        protected global::ExtAspNet.TabStrip mainTabStrip;
         
         /// <summary>
         /// windowSourceCode 控件。
@@ -136,7 +136,7 @@ namespace FineUI.Examples {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Window windowSourceCode;
+        protected global::ExtAspNet.Window windowSourceCode;
         
         /// <summary>
         /// XmlDataSource1 控件。

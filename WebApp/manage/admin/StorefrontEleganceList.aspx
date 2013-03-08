@@ -29,6 +29,7 @@
                 EnableRowNumber="True" IsDatabasePaging="true" 
                 OnRowDataBound="Grid1_RowDataBound" ForceFitAllTime="true">
                 <Columns>
+                    <ext:BoundField Width="150px" DataField="Other01" HeaderText="所属区域" TextAlign="Center" />
                     <ext:BoundField Width="150px" DataField="DictionaryKey" HeaderText="所属店面" TextAlign="Center"/>
                     <ext:BoundField Width="150px" DataField="StorefrontEleganceTitle" HeaderText="店面名称" TextAlign="Center" DataToolTipField="StorefrontEleganceTitle" />
                     <ext:BoundField Width="200px" DataField="StorefrontEleganceDescription" HeaderText="店面简介" TextAlign="Center" DataToolTipField="StorefrontEleganceDescription" />

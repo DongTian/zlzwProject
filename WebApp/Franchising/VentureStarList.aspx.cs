@@ -21,7 +21,16 @@ namespace WebApp.Franchising
             {
                 Load_VentureStarList();
                 Load_IndicatorsList();
+                Get_URLParam();
             }
+        }
+
+        private void Get_URLParam()
+        {
+            zlzw.BLL.DictionaryListBLL dictionaryListBLL = new zlzw.BLL.DictionaryListBLL();
+            DataTable dtMenu = dictionaryListBLL.GetList("DictionaryCategory='StoreType' and IsEnable=1 order by OrderNumber asc").Tables[0];
+            DataTable dtMenuItem = dictionaryListBLL.GetList("DictionaryCategory='StoreItem' and IsEnable=1 and IsInner=" + dtMenu.Rows[0]["DictionaryListID"].ToString()).Tables[0];
+            lab10.Text = "<a style='text-decoration:none;' href='StorefrontEleganceList.aspx?type=" + dtMenuItem.Rows[0]["DictionaryKey"].ToString() + "&reg=" + dtMenu.Rows[0]["DictionaryKey"].ToString() + "'><dt class='original1'>店面风采</dt></a>";
         }
 
         #region 加载评比指标菜单项目
@@ -44,9 +53,12 @@ namespace WebApp.Franchising
         {
             zlzw.BLL.VentureStarListBLL ventureStarListBLL = new zlzw.BLL.VentureStarListBLL();
             DataTable dt = ventureStarListBLL.GetList("IsEnable=1").Tables[0];
-
-            Repeater1.DataSource = dt;
-            Repeater1.DataBind();
+            if (dt.Rows.Count > 0)
+            {
+                Repeater1.DataSource = dt;
+                Repeater1.DataBind();
+            }
+            
         }
 
         #endregion
@@ -76,8 +88,14 @@ namespace WebApp.Franchising
         {
             zlzw.BLL.DictionaryListBLL dictionaryListBLL = new zlzw.BLL.DictionaryListBLL();
             DataTable dt = dictionaryListBLL.GetList("DictionaryKey='" + strStoreKey + "'").Tables[0];
-
-            return dt.Rows[0]["DictionaryValue"].ToString();
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0]["DictionaryValue"].ToString();
+            }
+            else
+            {
+                return "";
+            }
         }
 
         #endregion

@@ -10,7 +10,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
-using FineUI;
+using ExtAspNet;
 
 namespace WebApp.manage.admin
 {
@@ -56,7 +56,7 @@ namespace WebApp.manage.admin
         private int Get_StoreTypeListTotalCount()
         {
             zlzw.BLL.DictionaryListBLL dictionaryListBLL = new zlzw.BLL.DictionaryListBLL();
-            DataTable dt = dictionaryListBLL.GetList("DictionaryCategory='StoreType' and IsEnable=1").Tables[0];
+            DataTable dt = dictionaryListBLL.GetList("DictionaryCategory='StoreItem' and IsEnable=1").Tables[0];
             if (dt.Rows.Count > 0)
             {
                 return dt.Rows.Count;
@@ -70,7 +70,7 @@ namespace WebApp.manage.admin
         private void StoreTypeList_BindGrid()
         {
             zlzw.BLL.DictionaryListBLL dictionaryListBLL = new zlzw.BLL.DictionaryListBLL();
-            DataTable dt = dictionaryListBLL.GetList(grid1.PageSize, grid1.PageIndex + 1, "*", "PublishDate", 0, "desc", "DictionaryCategory='StoreType' and IsEnable=1").Tables[0];
+            DataTable dt = dictionaryListBLL.GetList(grid1.PageSize, grid1.PageIndex + 1, "*", "PublishDate", 0, "desc", "DictionaryCategory='StoreItem' and IsEnable=1").Tables[0];
             grid1.DataSource = dt;
             grid1.DataBind();
         }
@@ -81,7 +81,7 @@ namespace WebApp.manage.admin
 
         #region 分页事件
 
-        protected void Grid1_PageIndexChange(object sender, FineUI.GridPageEventArgs e)
+        protected void Grid1_PageIndexChange(object sender, ExtAspNet.GridPageEventArgs e)
         {
             grid1.PageIndex = e.NewPageIndex;
 
@@ -95,12 +95,30 @@ namespace WebApp.manage.admin
 
         protected void Grid1_RowDataBound(object sender, GridRowEventArgs e)
         {
-            //DataRowView dr = e.DataItem as DataRowView;
-            //if (dr != null)
-            //{
-            //    string strPublishDate = dr["PublishDate"].ToString();
-            //    e.Values[3] = Conver_DateFormat(strPublishDate);
-            //}
+            DataRowView dr = e.DataItem as DataRowView;
+            if (dr != null)
+            {
+                string strIsInner = dr["IsInner"].ToString();
+                e.Values[0] = Get_RegionName(strIsInner);
+            }
+        }
+
+        #endregion
+
+        #region 获取所在区域名称
+
+        private string Get_RegionName(string strDictionaryListID)
+        {
+            zlzw.BLL.DictionaryListBLL dictionaryListBLL = new zlzw.BLL.DictionaryListBLL();
+            DataTable dt = dictionaryListBLL.GetList("DictionaryListID=" + strDictionaryListID).Tables[0];
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0]["DictionaryValue"].ToString();
+            }
+            else
+            {
+                return "未知区域";
+            }
         }
 
         #endregion

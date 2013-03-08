@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Utility;
 
-namespace FineUI.Examples
+namespace ExtAspNet.Examples
 {
     public partial class _default : PageBase
     {
@@ -137,9 +137,9 @@ namespace FineUI.Examples
         /// 重新设置每个节点的图标
         /// </summary>
         /// <param name="nodes"></param>
-        private void ResolveTreeNode(FineUI.TreeNodeCollection nodes)
+        private void ResolveTreeNode(ExtAspNet.TreeNodeCollection nodes)
         {
-            foreach (FineUI.TreeNode node in nodes)
+            foreach (ExtAspNet.TreeNode node in nodes)
             {
                 if (node.Nodes.Count == 0)
                 {

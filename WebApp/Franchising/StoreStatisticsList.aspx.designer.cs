@@ -19,7 +19,16 @@ namespace WebApp.Franchising {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.PageManager PageManager1;
+        protected global::ExtAspNet.PageManager PageManager1;
+        
+        /// <summary>
+        /// lab10 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lab10;
         
         /// <summary>
         /// labMenuList 控件。
@@ -37,7 +46,7 @@ namespace WebApp.Franchising {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.DatePicker txbDate;
+        protected global::ExtAspNet.DatePicker txbDate;
         
         /// <summary>
         /// btnUpdte 控件。
@@ -46,7 +55,7 @@ namespace WebApp.Franchising {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button btnUpdte;
+        protected global::ExtAspNet.Button btnUpdte;
         
         /// <summary>
         /// Repeater1 控件。

@@ -32,7 +32,8 @@
                     <ext:SimpleForm ID="SimpleForm1" ShowBorder="true" ShowHeader="false" EnableLightBackgroundColor="true"
                         AutoScroll="true" BodyPadding="5px" runat="server" EnableCollapse="True">
                         <Items>
-                            <ext:DropDownList ID="drpStorefrontEleganceType" runat="server" Label="所属店面"></ext:DropDownList>
+                            <ext:DropDownList ID="drpRegionList" runat="server" Label="所属区域" OnSelectedIndexChanged="drpRegionList_SelectedIndexChanged" EnableAjax="true" AutoPostBack="true"></ext:DropDownList>
+                            <ext:DropDownList ID="drpStorefrontEleganceType" runat="server" Label="所属店面" OnSelectedIndexChanged="drpStorefrontEleganceType_SelectedIndexChanged" EnableAjax="true" AutoPostBack="true"></ext:DropDownList>
                             <ext:TextBox ID="txbStorefrontEleganceTitle" runat="server" Label="店面名称" EmptyText="店面名称" Required="true"
                             RequiredMessage="店面名称不能为空"></ext:TextBox>
                             <ext:TextArea ID="txbStorefrontEleganceDescription" runat="server" Label="店面简介介绍" Required="true" RequiredMessage="店面简介不能为空"></ext:TextArea>

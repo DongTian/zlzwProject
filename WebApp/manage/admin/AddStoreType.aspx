@@ -32,6 +32,7 @@
                         <ext:SimpleForm ID="SimpleForm1" ShowBorder="true" ShowHeader="false" EnableLightBackgroundColor="true"
                             AutoScroll="true" BodyPadding="5px" runat="server" EnableCollapse="True">
                             <Items>
+                                <ext:DropDownList ID="drpRegionStoreList" runat="server" Label="所属区域"></ext:DropDownList>
                                 <ext:TextBox ID="txbNewsTypeName" runat="server" Label="门店名称" EmptyText="门店名称" Required="true"
                                     RequiredMessage="门店名称不能为空">
                                 </ext:TextBox>

@@ -10,7 +10,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
-using FineUI;
+using ExtAspNet;
 
 namespace WebApp.manage.admin
 {
@@ -76,13 +76,11 @@ namespace WebApp.manage.admin
             grid1.DataBind();
         }
 
-
-
         #endregion
 
         #region 分页事件
 
-        protected void Grid1_PageIndexChange(object sender, FineUI.GridPageEventArgs e)
+        protected void Grid1_PageIndexChange(object sender, ExtAspNet.GridPageEventArgs e)
         {
             grid1.PageIndex = e.NewPageIndex;
 
@@ -99,8 +97,29 @@ namespace WebApp.manage.admin
             DataRowView dr = e.DataItem as DataRowView;
             if (dr != null)
             {
+                string strOther01 = dr["Other01"].ToString();
+                e.Values[0] = GetRegionName(strOther01);
+
                 string strDictionaryKey = dr["DictionaryKey"].ToString();
-                e.Values[0] = Get_StoreTitle(strDictionaryKey);
+                e.Values[1] = Get_StoreTitle(strDictionaryKey);
+            }
+        }
+
+        #endregion
+
+        #region 获取所属区域名称
+
+        private string GetRegionName(string strOther01)
+        {
+            zlzw.BLL.DictionaryListBLL dictionaryListBLL = new zlzw.BLL.DictionaryListBLL();
+            DataTable dt = dictionaryListBLL.GetList("DictionaryListID=" + strOther01).Tables[0];
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0]["DictionaryValue"].ToString();
+            }
+            else
+            {
+                return "未知";
             }
         }
 

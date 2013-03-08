@@ -33,6 +33,7 @@
                     <ext:SimpleForm ID="SimpleForm1" ShowBorder="true" ShowHeader="false" EnableLightBackgroundColor="true"
                         AutoScroll="true" BodyPadding="5px" runat="server" EnableCollapse="True">
                         <Items>
+                            <ext:DropDownList ID="drpRegionList" runat="server" Label="所属区域" OnSelectedIndexChanged="drpRegionList_SelectedIndexChanged" EnableAjax="true" AutoPostBack="true"></ext:DropDownList>
                             <ext:DropDownList ID="drpStoreType" runat="server" Label="所属店面"></ext:DropDownList>
                             <ext:TextBox ID="txbVentureStarName" runat="server" Label="姓名" EmptyText="创业明星的姓名" Required="true"
                             RequiredMessage="姓名不能为空"></ext:TextBox>

@@ -82,6 +82,9 @@
                 <p style="margin-bottom:10px;margin-top:10px;">适用灵活的社会保险缴费项目，降低用工成本；</p>
                 <p style="margin-bottom:10px;margin-top:10px;">2000平方米人才市场测评及培训，筛除问题员工，降低流失率，提高匹配度；</p>
                 <p style="margin-bottom:10px;margin-top:10px;">专业化的工作团队、规范的工作流程、完善的后勤保障，突发事件处理能力强；</p>
+                <div style="position:absolute;float:right;padding-left:330px;margin-top:-420px;">
+                    <img src="../Resources/images/lwpqlct.jpg" />
+                </div>
             </div>
             
             <div class="clear">
