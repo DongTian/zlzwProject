@@ -173,6 +173,7 @@ em{ font-style:normal;}
 .left1{ width:295px; float:left;}
 .right1{ width:618px; float:left; border-left:1px solid #cacaca; padding-left:36px;}
 .right11{ width:618px; float:left; border-left:1px solid #cacaca; padding-left:6px;}
+.right111{ width:1000px; float:left; padding-left:22px;}
 .bar3{ height:25px; line-height:25px; position:relative; margin-bottom:18px;}
 .bar3 *{ vertical-align:middle}
 .bar3 b{ font-size:18px; color:#3a0b00; font-weight:400}
@@ -260,3 +261,22 @@ em{ font-style:normal;}
         margin:0 15px 0 0;
         line-height:35px;
     }
+.myLinks {
+   width:960px; 
+}
+
+    .myLinks ul {
+        width:960px;
+        margin:0;
+        padding:0;
+    }
+
+.myLinks ul li{
+    display:block;
+    float:left;
+    margin-left:15px;
+    margin-bottom:20px;
+    list-style:none;
+    line-height:25px;
+    white-space: nowrap;
+}

@@ -44,8 +44,8 @@ namespace WebApp.Links
             zlzw.BLL.LinkListBLL linkListBLL = new zlzw.BLL.LinkListBLL();
             DataTable dt = linkListBLL.GetList("IsEnable=1 and LinkType=1").Tables[0];
 
-            DataList2.DataSource = dt;
-            DataList2.DataBind();
+            repLinks.DataSource = dt;
+            repLinks.DataBind();
         }
 
         #endregion
@@ -80,9 +80,9 @@ namespace WebApp.Links
             }
             else
             {
-                if (strTitle.Length >= 11)
+                if (strTitle.Length >= 12)
                 {
-                    return strTitle.Substring(0, 11) + "...";
+                    return strTitle.Substring(0, 12) + "...";
                 }
                 else
                 {
@@ -93,17 +93,28 @@ namespace WebApp.Links
 
         #endregion
 
-        protected void DataList2_ItemDataBound(object sender, DataListItemEventArgs e)
+        //protected void DataList2_ItemDataBound(object sender, DataListItemEventArgs e)
+        //{
+        //    if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+        //    {
+        //        System.Data.DataRowView drv = (System.Data.DataRowView)e.Item.DataItem;
+        //        Label labLinksText = (Label)e.Item.FindControl("labLinksText");
+
+        //        labLinksText.Text = "<a class='huia' style='color:#304874;' href='" + drv["LinkTarget"].ToString() + "' target='_blank' title='" + drv["LinkTitle"].ToString() + "'>" + drv["LinkTitle"].ToString() + "</a>";
+        //    }
+        //}
+
+        protected void repLinks_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            System.Web.UI.WebControls.ListItemType lit = e.Item.ItemType;
+            if (lit == System.Web.UI.WebControls.ListItemType.Item || lit == System.Web.UI.WebControls.ListItemType.AlternatingItem)
             {
                 System.Data.DataRowView drv = (System.Data.DataRowView)e.Item.DataItem;
                 Label labLinksText = (Label)e.Item.FindControl("labLinksText");
 
-                labLinksText.Text = "<a class='huia' style='color:#304874;' href='" + drv["LinkTarget"].ToString() + "' target='_blank' title='" + drv["LinkTitle"].ToString() + "'>" + Set_EnterpriseTitleLength(drv["LinkTitle"].ToString(), 1) + "</a>";
+                labLinksText.Text = "<a class='huia' style='color:#304874;' href='" + drv["LinkTarget"].ToString() + "' target='_blank' title='" + drv["LinkTitle"].ToString() + "'>" + drv["LinkTitle"].ToString() + "</a>";
             }
         }
-
     }
 }
 

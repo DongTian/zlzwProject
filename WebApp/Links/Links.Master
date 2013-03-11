@@ -21,8 +21,8 @@
                     <div class=" top1_wen m4">
                         服务热线：<span class="red">4008-118-678 </span>意见反馈</div>
                     <div class="top1_wen2 m4">
-                        <a href="#" class="honga">企业登陆</a> / <a href="#" class="honga">合作伙伴登陆</a> / <a href="#"
-                            class="honga">员工登陆</a> / <a href="#" class="honga">求职者登陆</a></div>
+                        <a href="#" class="honga" onclick="javascript:open_DataBaseUserLogin();return false;">企业登陆</a> / <a href="#" class="honga" onclick="javascript:open_DataBaseUserLogin();return false;">合作伙伴登陆</a> / <a href="#"
+                        class="honga" onclick="javascript:open_DataBaseUserLogin();return false;">员工登陆</a></div>
                 </div>
             </div>
             <div class="top2">
@@ -60,6 +60,11 @@
             <div class="clear">
             </div>
         </div>
+        <script type="text/javascript">
+            function open_DataBaseUserLogin() {
+                art.dialog.open("../DataBaseUserLogin.html", { width: 477, height: 271 });
+            }
+        </script>
     </form>
 </body>
 </html>
