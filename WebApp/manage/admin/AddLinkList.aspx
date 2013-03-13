@@ -43,6 +43,7 @@
                                 <ext:TextBox ID="txbLinkTarget" runat="server" Label="链接地址" EmptyText="友情链接链接地址" Required="true" RequiredMessage="友情链接链接地址不能为空"></ext:TextBox>
                                 <ext:FileUpload ID="btnImageUpload" runat="server" Label="图片Logo" EmptyText="友情链接图片尺寸为135*70"></ext:FileUpload>
                                 <ext:Image ID="imgLinkImage" runat="server" Label="链接Logo" Visible="false"></ext:Image>
+                                <ext:TextBox ID="txbSort" runat="server" Label="排序" EmptyText="排序字段" Required="true" RequiredMessage="排序字段不能为空" RegexPattern="ALPHA_NUMERIC" RegexMessage="排序字段只能为正整数"></ext:TextBox>
                                 <ext:TextArea ID="txbLinkDesc" runat="server" Label="简介" EmptyText="链接简介" Required="false"></ext:TextArea>
                             </Items>
                         </ext:SimpleForm>

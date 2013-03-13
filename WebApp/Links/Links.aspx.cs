@@ -29,7 +29,7 @@ namespace WebApp.Links
         private void Load_LinksImageList()
         {
             zlzw.BLL.LinkListBLL linkListBLL = new zlzw.BLL.LinkListBLL();
-            DataTable dt = linkListBLL.GetList("IsEnable=1 and LinkType=0").Tables[0];
+            DataTable dt = linkListBLL.GetList("IsEnable=1 and LinkType=0 order by Other01 asc").Tables[0];
 
             DataList1.DataSource = dt;
             DataList1.DataBind();
@@ -42,7 +42,7 @@ namespace WebApp.Links
         private void Load_LinksTextList()
         {
             zlzw.BLL.LinkListBLL linkListBLL = new zlzw.BLL.LinkListBLL();
-            DataTable dt = linkListBLL.GetList("IsEnable=1 and LinkType=1").Tables[0];
+            DataTable dt = linkListBLL.GetList("IsEnable=1 and LinkType=1 order by Other01 asc").Tables[0];
 
             repLinks.DataSource = dt;
             repLinks.DataBind();

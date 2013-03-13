@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head id="Head1" runat="server">
-    <title>职来职往后台管理</title>
+    <title>校企英才后台管理</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link href="css/default.css" rel="stylesheet" type="tx/css" />
 </head>
@@ -33,7 +33,7 @@
                     <ext:ContentPanel ShowBorder="false" CssClass="header" ShowHeader="false" BodyStyle="background-color:#1C3E7E;"
                         ID="ContentPanel1" runat="server">
                         <div class="title" style="font-size:16px; margin-top:5px;">
-                            <a href="./default.aspx" style="color:#fff;text-decoration:none; margin-left:10px; font-weight:bold;">职来职往后台管理</a>
+                            <a href="./default.aspx" style="color:#fff;text-decoration:none; margin-left:10px; font-weight:bold;">校企英才后台管理</a>
                         </div>
 						<div class="version" style="font-size:16px; float:right; margin-top:-20px; margin-right:10px;">
                             <a href="../default.aspx" target="_blank" style="color:#fff; font-weight:bold;">网站首页</a>
@@ -84,7 +84,7 @@
     </ext:Window>
     <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="menu.xml"></asp:XmlDataSource>
     </form>
-    <img src="images/logo/zlzwlogo.png" alt="职来职往" id="logo" />
+    <img src="images/logo/zlzwlogo.png" alt="校企英才" id="logo" />
     <script src="js/default.js" type="text/javascript"></script>
 </body>
 </html>

@@ -27,7 +27,7 @@ namespace WebApp.manage.admin
             Panel2.Title = DateTime.Now.ToString("yyyy年MM月dd日");
         }
 
-        #region 加载新闻类型信息
+        #region 加载友情链接信息
 
         private void LoadData(string strType)
         {
@@ -35,13 +35,14 @@ namespace WebApp.manage.admin
             {
                 string strID = Request.QueryString["value"];//操作ID
                 zlzw.BLL.LinkListBLL linkListBLL = new zlzw.BLL.LinkListBLL();
-                zlzw.Model.LinkListModal linkListModal = linkListBLL.GetModel(int.Parse(Get_LinkID(strID)));
+                zlzw.Model.LinkListModal linkListModal = linkListBLL.GetModel(int.Parse(strID));
                 drpLinkType.SelectedValue = linkListModal.LinkType.ToString();
                 txbLinkTitle.Text = linkListModal.LinkTitle;//友情链接名称
                 txbLinkTarget.Text = linkListModal.LinkTarget;//友情链接跳转地址
                 txbLinkDesc.Text = linkListModal.LinkDesc;//链接简介
                 ViewState["LinkImages"] = linkListModal.LinkImage;//友情链接图片
                 imgLinkImage.ImageUrl = linkListModal.LinkImage;
+                txbSort.Text = linkListModal.Other01;//排序
                 imgLinkImage.Visible = true;
                 ViewState["PublishDate"] = linkListModal.PublishDate.ToString();
                 ToolbarText2.Text = "编辑一个友情链接";
@@ -63,6 +64,7 @@ namespace WebApp.manage.admin
                 linkListModal.LinkTitle = txbLinkTitle.Text;//友情链接名称
                 linkListModal.LinkTarget = txbLinkTarget.Text;//友情链接地址
                 linkListModal.LinkDesc = txbLinkDesc.Text;//友情链接简介
+                linkListModal.Other01 = txbSort.Text;//排序
                 if (btnImageUpload.PostedFile.ContentLength > 0)
                 {
                     btnImageUpload.SaveAs(Server.MapPath(ViewState["LinkImages"].ToString()));
@@ -74,7 +76,7 @@ namespace WebApp.manage.admin
                 }
                 linkListModal.IsEnable = 1;
                 linkListModal.PublishDate = DateTime.Parse(ViewState["PublishDate"].ToString());
-                linkListModal.LinkID = int.Parse(Get_LinkID(Request.QueryString["value"]));
+                linkListModal.LinkID = int.Parse(Request.QueryString["value"]);
                 zlzw.BLL.LinkListBLL linkListBLL = new zlzw.BLL.LinkListBLL();
                 linkListBLL.Update(linkListModal);
             }
@@ -87,6 +89,7 @@ namespace WebApp.manage.admin
                 linkListModal.LinkTitle = txbLinkTitle.Text;//友情链接名称
                 linkListModal.LinkTarget = txbLinkTarget.Text;//友情链接地址
                 linkListModal.LinkDesc = txbLinkDesc.Text;//友情链接简介
+                linkListModal.Other01 = txbSort.Text;//排序
                 if (btnImageUpload.HasFile)
                 {
                     string fileName = DateTime.Now.Ticks.ToString() + "_" + btnImageUpload.FileName;

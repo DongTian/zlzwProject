@@ -25,7 +25,7 @@
         <Items>
             <ext:Grid ID="grid1" PageSize="15" ShowBorder="true" ShowHeader="false"
                 AutoHeight="true" AllowPaging="true" runat="server" EnableCheckBoxSelect="True"
-                Width="800px" DataKeyNames="LinkGUID" OnPageIndexChange="Grid1_PageIndexChange"
+                Width="800px" DataKeyNames="LinkID" OnPageIndexChange="Grid1_PageIndexChange"
                 EnableRowNumber="True" IsDatabasePaging="true" 
                 OnRowDataBound="Grid1_RowDataBound" ForceFitAllTime="true">
                 <Columns>
@@ -34,11 +34,12 @@
                     <ext:BoundField Width="150px" DataField="LinkTarget" HeaderText="链接地址" TextAlign="Center" DataToolTipField="LinkTarget" />
                     <ext:ImageField Width="150px" DataImageUrlField="LinkImage" HeaderText="网站Logo" TextAlign="Center" />
                     <ext:BoundField Width="100px" DataField="LinkDesc" HeaderText="链接简介" TextAlign="Center" DataToolTipField="LinkDesc" />
+                    <ext:BoundField Width="50px" DataField="Other01" HeaderText="排序" TextAlign="Center"/>
                     <ext:CheckBoxField Width="60px" RenderAsStaticField="true" DataField="isenable" HeaderText="是否可用" TextAlign="Center" />
                     <ext:BoundField Width="150px" DataField="publishdate" HeaderText="发布日期" TextAlign="Center" DataFormatString="{0:yyyy年MM月dd日}" />
                     <ext:TemplateField HeaderText="编辑操作" TextAlign="Center">
                         <ItemTemplate>
-                            <a style="text-decoration:none;" href="<%# GetEditUrl(DataBinder.Eval(Container.DataItem, "[LinkGUID]")) %>">编辑</a>
+                            <a style="text-decoration:none;" href="<%# GetEditUrl(DataBinder.Eval(Container.DataItem, "[LinkID]")) %>">编辑</a>
                         </ItemTemplate>
                     </ext:TemplateField>
                 </Columns>

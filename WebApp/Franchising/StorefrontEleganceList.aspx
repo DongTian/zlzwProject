@@ -53,38 +53,21 @@
             <div class="right1" style="font-size:14px; line-height:25px;">
                 <div class="bar4" style="color:#F26200;">
                     <strong>店面风采</strong></div>
-                    <table>
-                    <tr>
-                        <td valign="top">
+                        <div class="StoreStorefrontElegance">
                             <asp:Label ID="labStoreImage" runat="server"></asp:Label>
-                        </td>
-                        <td style="width:15px;">
-                           
-                        </td>
-                        <td valign="top">
-                            <table>
-                                <tr>
-                                    <td valign="top" class='bar6'>
-                                        <asp:Label ID="labStoreDesc" runat="server"></asp:Label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <asp:Label ID="labPostJob" runat="server"></asp:Label>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
+                            <asp:Label ID="labStoreDesc" runat="server"></asp:Label>
+                        </div>
+                        <div style="margin-top:20px;">
+                            <asp:Label ID="labPostJob" runat="server"></asp:Label>
+                        </div>
                 <table>
                     <tr>
                         <td>&nbsp;</td>
                     </tr>
                     <tr>
-                        <asp:DataList ID="DataList1" runat="server"  RepeatColumns="2" RepeatDirection="Horizontal" onitemdatabound="DataList1_ItemDataBound">
+                        <asp:DataList ID="DataList1" runat="server"  RepeatColumns="3" RepeatDirection="Horizontal" onitemdatabound="DataList1_ItemDataBound">
                             <ItemTemplate>
-                                <table style="margin-left:50px; margin-top:30px;">
+                                <table style="margin-top:15px;">
                                 <tr>
                                     <td>
                                         <asp:Label ID="labImageList" runat="server"></asp:Label>

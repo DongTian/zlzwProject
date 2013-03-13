@@ -171,7 +171,7 @@ em{ font-style:normal;}
 .line{ width:100%; border-bottom:1px dashed #cacaca; height:1px; display:block}
 
 .left1{ width:295px; float:left;}
-.right1{ width:618px; float:left; border-left:1px solid #cacaca; padding-left:36px;}
+.right1{ width:650px; float:left; border-left:1px solid #cacaca; padding-left:23px;}
 .right11{ width:618px; float:left; border-left:1px solid #cacaca; padding-left:6px;}
 .right111{ width:1000px; float:left; padding-left:22px;}
 .bar3{ height:25px; line-height:25px; position:relative; margin-bottom:18px;}
@@ -279,4 +279,15 @@ em{ font-style:normal;}
     list-style:none;
     line-height:25px;
     white-space: nowrap;
+}
+
+.StoreStorefrontElegance {
+    width:100%;
+}
+
+.StoreStorefrontElegance img {
+    float:left;
+    width:auto;
+    height:auto;
+    margin-right:15px;
 }

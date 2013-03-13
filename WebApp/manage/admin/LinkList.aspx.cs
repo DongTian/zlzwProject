@@ -130,10 +130,10 @@ namespace WebApp.manage.admin
                 }
                 #region 删除逻辑
 
-                zlzw.BLL.AdminListBLL adminListBLL = new zlzw.BLL.AdminListBLL();
-                zlzw.Model.AdminListModel adminListModel = adminListBLL.GetModel(int.Parse(strSelectID));
-                adminListModel.IsEnable = 0;
-                adminListBLL.Update(adminListModel);
+                zlzw.BLL.LinkListBLL linkListBLL = new zlzw.BLL.LinkListBLL();
+                zlzw.Model.LinkListModal linkListModal = linkListBLL.GetModel(int.Parse(strSelectID));
+                linkListModal.IsEnable = 0;
+                linkListBLL.Update(linkListModal);
                 LinkList_BindGrid();
 
                 #endregion

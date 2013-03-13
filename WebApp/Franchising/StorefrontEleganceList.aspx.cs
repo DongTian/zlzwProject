@@ -100,7 +100,7 @@ namespace WebApp.Franchising
             {
                 labStoreImage.Text = "<img src='" + dt.Rows[0]["StorefrontEleganceHeadImage"].ToString().Split('~')[1] + "' alt='' />";
                 labStoreDesc.Text = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + dt.Rows[0]["StorefrontEleganceDescription"].ToString();
-                labPostJob.Text = "<span style='color:#1D5087;'>主推岗位：</span>" + dt.Rows[0]["PushJobs"].ToString();
+                labPostJob.Text = "<span style='color:#1D5087;font-size:14px;'>主推岗位：</span>" + dt.Rows[0]["PushJobs"].ToString();
             }
         }
 
@@ -149,7 +149,7 @@ namespace WebApp.Franchising
         private void Load_StoreOthewrImageList(string strStoreKey)
         {
             zlzw.BLL.StoreImageListBLL storeImageListBLL = new zlzw.BLL.StoreImageListBLL();
-            DataTable dt = storeImageListBLL.GetList("DictionaryKey='" + strStoreKey + "'").Tables[0];
+            DataTable dt = storeImageListBLL.GetList("DictionaryKey='" + strStoreKey + "' and IsEnable=1").Tables[0];
 
             DataList1.DataSource = dt;
             DataList1.DataBind();
@@ -225,7 +225,7 @@ namespace WebApp.Franchising
                 Label labImageList = (Label)e.Item.FindControl("labImageList");
                 Label labImageName = (Label)e.Item.FindControl("labImageName");
 
-                labImageList.Text = "<img src='" + drv["StoreImagePath"].ToString().Split('~')[1] + "' />";
+                labImageList.Text = "<img width='210' src='" + drv["StoreImagePath"].ToString().Split('~')[1] + "' />";
             }
         }
         
