@@ -68,7 +68,7 @@
         <script src="../Resources/js/iframeTools.source.js" type="text/javascript"></script>
         <script type="text/javascript">
             function open_DataBaseUserLogin() {
-                art.dialog.open("DataBaseUserLogin.html", { width: 477, height: 271 });
+                art.dialog.open("../DataBaseUserLogin.html", { width: 477, height: 271 });
             }
         </script>
     </form>
