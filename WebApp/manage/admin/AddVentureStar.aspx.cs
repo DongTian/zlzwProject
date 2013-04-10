@@ -80,7 +80,7 @@ namespace WebApp.manage.admin
                 drpStoreType.SelectedValue = ventureStarListModal.DictionaryKey;//所属门店
                 txbVentureStarName.Text = ventureStarListModal.VentureStarName;//创业明星姓名
                 FCKeditor1.Value = ventureStarListModal.VentureStarContent;//创业明星介绍
-
+                labPreviweImg.ImageUrl = ventureStarListModal.VentureStarImage.Split('~')[1];
                 ViewState["VentureStarImage"] = ventureStarListModal.VentureStarImage;//创业明星图片地址
                 ViewState["PublishDate"] = ventureStarListModal.PublishDate.ToString();
                 ViewState["VentureStarGUID"] = ventureStarListModal.VentureStarGUID.ToString();

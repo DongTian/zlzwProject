@@ -36,6 +36,7 @@
                                 <ext:FileUpload ID="btnBannerUpload" runat="server" Label="横幅广告上传" EmptyText="横幅广告宽度为1000px"></ext:FileUpload>
                                 <ext:TextBox ID="txbBannerLinks" runat="server" Label="链接地址" Required="true" RegexMessage="链接地址不能为空" ></ext:TextBox>
                                 <ext:CheckBox ID="ckbIsHot" runat="server" Label="热门横幅广告"></ext:CheckBox>
+                                <ext:Image ID="labPreviweImg" runat="server" Label="预览图" ImageWidth="590px"></ext:Image>
                             </Items>
                         </ext:SimpleForm>
                     </Items>

@@ -36,9 +36,10 @@
                             <ext:DropDownList ID="drpStorefrontEleganceType" runat="server" Label="所属店面" OnSelectedIndexChanged="drpStorefrontEleganceType_SelectedIndexChanged" EnableAjax="true" AutoPostBack="true"></ext:DropDownList>
                             <ext:TextBox ID="txbStorefrontEleganceTitle" runat="server" Label="店面名称" EmptyText="店面名称" Required="true"
                             RequiredMessage="店面名称不能为空"></ext:TextBox>
-                            <ext:TextArea ID="txbStorefrontEleganceDescription" runat="server" Label="店面简介介绍" Required="true" RequiredMessage="店面简介不能为空"></ext:TextArea>
+                            <ext:HtmlEditor ID="txbStorefrontEleganceDescription" runat="server" Label="店面简介介绍" Height="110px"></ext:HtmlEditor>
                             <ext:TextBox ID="txbPushJobs" runat="server" Label="主推岗位" Required="true" EmptyText="店面主推岗位" RequiredMessage="主推岗位不能为空"></ext:TextBox>
                             <ext:FileUpload ID="btnStorefrontEleganceHeadImage" runat="server" Label="店面介绍图片" EmptyText="请选择一张尺寸为166 * 55的图片"></ext:FileUpload>
+                            <ext:Image ID="labPreviweImg" runat="server" Label="预览图" ImageWidth="190px"></ext:Image>
                         </Items>
                     </ext:SimpleForm>
                 </Items>

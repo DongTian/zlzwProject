@@ -47,6 +47,7 @@ namespace WebApp.manage.admin
                 {
                     ckbIsHot.Checked = false;
                 }
+                labPreviweImg.ImageUrl = bannerListModel.BannerImage.Split('~')[1];
                 ViewState["BannerImage"] = bannerListModel.BannerImage;//焦点图路径
                 ViewState["PublishDate"] = bannerListModel.PublishDate.ToString();
                 ViewState["BannerGUID"] = bannerListModel.BannerGUID.ToString();

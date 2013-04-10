@@ -36,10 +36,12 @@ namespace WebApp.manage.admin
                 string strID = Request.QueryString["value"];//操作ID
                 zlzw.BLL.PartnersListBLL partnersListBLL = new zlzw.BLL.PartnersListBLL();
                 DataTable dt = partnersListBLL.GetList("PartnerGUID='"+ strID +"'").Tables[0];
-                zlzw.Model.PartnersListModal partnersListModal = partnersListBLL.GetModel(int.Parse(dt.Rows[0]["PartnerID"].ToString()));
+                zlzw.Model.PartnersListModel partnersListModal = partnersListBLL.GetModel(int.Parse(dt.Rows[0]["PartnerID"].ToString()));
                 txbPartnersName.Text = partnersListModal.PartnerName;//合作伙伴名称
                 txbPartner.Text = partnersListModal.PartnerIntroduction;//合作伙伴简介
-                
+                txbJobContactAdd.Text = partnersListModal.JobContactAdd;//联系地址
+                txbJobContactPhone.Text = partnersListModal.JobContactPhone;//联系电话
+                txbJobContactName.Text = partnersListModal.JobContactName;//联系人
                 if (partnersListModal.IsHot == 1)
                 {
                     ckbIsHot.Checked = true;
@@ -70,7 +72,7 @@ namespace WebApp.manage.admin
             if (Request.QueryString["Type"] == "1")
             {
                 //编辑保存
-                zlzw.Model.PartnersListModal partnersListModal = new zlzw.Model.PartnersListModal();
+                zlzw.Model.PartnersListModel partnersListModal = new zlzw.Model.PartnersListModel();
                 partnersListModal.PartnerName = txbPartnersName.Text;//合作伙伴名称
                 partnersListModal.PartnerIntroduction = txbPartner.Text;//合作伙伴简介
 
@@ -102,6 +104,9 @@ namespace WebApp.manage.admin
                 {
                     partnersListModal.IsHot = 0;
                 }
+                partnersListModal.JobContactAdd = txbJobContactAdd.Text;//联系地址
+                partnersListModal.JobContactPhone = txbJobContactPhone.Text;//联系电话
+                partnersListModal.JobContactName = txbJobContactName.Text;//联系人
                 partnersListModal.IsEnable = 1;
                 partnersListModal.PublishDate = DateTime.Parse(ViewState["PublishDate"].ToString());
                 partnersListModal.PartnerID = int.Parse(Get_PartnersID(Request.QueryString["value"]));
@@ -112,7 +117,7 @@ namespace WebApp.manage.admin
             else
             {
                 //添加保存
-                zlzw.Model.PartnersListModal partnersListModal = new zlzw.Model.PartnersListModal();
+                zlzw.Model.PartnersListModel partnersListModal = new zlzw.Model.PartnersListModel();
                 partnersListModal.PartnerName = txbPartnersName.Text;//合作伙伴名称
                 partnersListModal.PartnerIntroduction = txbPartner.Text;//合作伙伴简介
                 partnersListModal.IsEnable = 1;
@@ -146,6 +151,9 @@ namespace WebApp.manage.admin
                     Alert.Show("请上传一张宽度为1024px的企业Banner", "错误提醒", MessageBoxIcon.Error);
                     return;
                 }
+                partnersListModal.JobContactAdd = txbJobContactAdd.Text;//联系地址
+                partnersListModal.JobContactPhone = txbJobContactPhone.Text;//联系电话
+                partnersListModal.JobContactName = txbJobContactName.Text;//联系人
                 partnersListModal.PartnerGUID = Guid.NewGuid();
                 partnersListModal.PublishDate = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"));
 

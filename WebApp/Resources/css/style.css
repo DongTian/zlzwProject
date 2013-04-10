@@ -200,3 +200,15 @@ a{ color:#0000FF;}
 }
 
 .menuItemHeight{margin-bottom:-10px;margin-top:-10px;}
+#hbMore {
+    float:right;
+    margin-top:15px;
+    margin-right:10px;
+    
+}
+    #hbMore a {
+        font-family:'Microsoft YaHei';
+        font-size:14px;
+        color:#666666;
+        text-decoration:none;
+    }

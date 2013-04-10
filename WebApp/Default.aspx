@@ -104,7 +104,7 @@
                         <img src="Resources/images/tu_19.gif" width="220" height="33" /></div>
                     <div style="width: 500px; height: 25px; float: left; margin-left: 20px; margin-top: 15px;
                         font-size: 14px; font-family: 微软雅黑; color: #666666; display: inline;">
-                        <span class="r"><a href="OnlineApplication.aspx" class="huia">更多...</a></span><span id="labRegoin"></span></div>
+                        <span class="r"><a href="OnlineApplication.aspx" class="huia">更多</a></span><span id="labRegoin"></span></div>
                 </div>
                 <div class="xinwen_nei01">
                     <ul id="labPostList">
@@ -114,7 +114,9 @@
         </div>
         <div class="jiameng">
             <div class="jiameng_biao">
-                <img src="Resources/images/tu_30.gif" /></div>
+                <img src="Resources/images/tu_30.gif" />
+            <div id="hbMore"><a href="About/PartnerList.aspx">更多...</a></div>
+            </div>
             <asp:Repeater ID="Repeater2" runat="server" OnItemDataBound="Repeater2_ItemDataBound">
                 <ItemTemplate>
                     <div class="jiameng_gongsi">

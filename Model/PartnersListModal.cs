@@ -2,12 +2,12 @@
 namespace zlzw.Model
 {
     /// <summary>
-    /// PartnersListModal:实体类(属性说明自动提取数据库字段的描述信息)
+    /// PartnersListModel:实体类(属性说明自动提取数据库字段的描述信息)
     /// </summary>
     [Serializable]
-    public partial class PartnersListModal
+    public partial class PartnersListModel
     {
-        public PartnersListModal()
+        public PartnersListModel()
         { }
         #region Model
         private int _partnerid;
@@ -22,6 +22,9 @@ namespace zlzw.Model
         private int? _ishot;
         private int? _isenable;
         private DateTime? _publishdate;
+        private string _jobcontactname;
+        private string _jobcontactadd;
+        private string _jobcontactphone;
         private string _other01;
         private string _other02;
         private string _other03;
@@ -120,6 +123,30 @@ namespace zlzw.Model
         {
             set { _publishdate = value; }
             get { return _publishdate; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string JobContactName
+        {
+            set { _jobcontactname = value; }
+            get { return _jobcontactname; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string JobContactAdd
+        {
+            set { _jobcontactadd = value; }
+            get { return _jobcontactadd; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string JobContactPhone
+        {
+            set { _jobcontactphone = value; }
+            get { return _jobcontactphone; }
         }
         /// <summary>
         /// 

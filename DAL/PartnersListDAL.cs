@@ -38,7 +38,7 @@ namespace zlzw.DAL
 		/// <summary>
 		///  增加一条数据
 		/// </summary>
-		public int Add(zlzw.Model.PartnersListModal model)
+		public int Add(zlzw.Model.PartnersListModel model)
 		{
 			int rowsAffected;
 			SqlParameter[] parameters = {
@@ -46,7 +46,7 @@ namespace zlzw.DAL
 					new SqlParameter("@PartnerGUID", SqlDbType.UniqueIdentifier,16),
 					new SqlParameter("@PartnerName", SqlDbType.NVarChar,200),
 					new SqlParameter("@PartnerTitle", SqlDbType.NVarChar,200),
-					new SqlParameter("@PartnerIntroduction", SqlDbType.NVarChar),
+					new SqlParameter("@PartnerIntroduction", SqlDbType.NVarChar,-1),
 					new SqlParameter("@PartnerLogo", SqlDbType.NVarChar,200),
 					new SqlParameter("@PartnerBanner", SqlDbType.NVarChar,200),
 					new SqlParameter("@PartnerKind", SqlDbType.Int,4),
@@ -54,6 +54,9 @@ namespace zlzw.DAL
 					new SqlParameter("@IsHot", SqlDbType.Int,4),
 					new SqlParameter("@IsEnable", SqlDbType.Int,4),
 					new SqlParameter("@PublishDate", SqlDbType.DateTime),
+					new SqlParameter("@JobContactName", SqlDbType.NVarChar,50),
+					new SqlParameter("@JobContactAdd", SqlDbType.NVarChar,50),
+					new SqlParameter("@JobContactPhone", SqlDbType.NVarChar,50),
 					new SqlParameter("@Other01", SqlDbType.NVarChar,50),
 					new SqlParameter("@Other02", SqlDbType.NVarChar,50),
 					new SqlParameter("@Other03", SqlDbType.NVarChar,50)};
@@ -69,9 +72,12 @@ namespace zlzw.DAL
 			parameters[9].Value = model.IsHot;
 			parameters[10].Value = model.IsEnable;
 			parameters[11].Value = model.PublishDate;
-			parameters[12].Value = model.Other01;
-			parameters[13].Value = model.Other02;
-			parameters[14].Value = model.Other03;
+			parameters[12].Value = model.JobContactName;
+			parameters[13].Value = model.JobContactAdd;
+			parameters[14].Value = model.JobContactPhone;
+			parameters[15].Value = model.Other01;
+			parameters[16].Value = model.Other02;
+			parameters[17].Value = model.Other03;
 
 			DbHelperSQL.RunProcedure("PartnersList_ADD",parameters,out rowsAffected);
 			return (int)parameters[0].Value;
@@ -80,7 +86,7 @@ namespace zlzw.DAL
 		/// <summary>
 		///  更新一条数据
 		/// </summary>
-		public bool Update(zlzw.Model.PartnersListModal model)
+		public bool Update(zlzw.Model.PartnersListModel model)
 		{
 			int rowsAffected=0;
 			SqlParameter[] parameters = {
@@ -88,7 +94,7 @@ namespace zlzw.DAL
 					new SqlParameter("@PartnerGUID", SqlDbType.UniqueIdentifier,16),
 					new SqlParameter("@PartnerName", SqlDbType.NVarChar,200),
 					new SqlParameter("@PartnerTitle", SqlDbType.NVarChar,200),
-					new SqlParameter("@PartnerIntroduction", SqlDbType.NVarChar),
+					new SqlParameter("@PartnerIntroduction", SqlDbType.NVarChar,-1),
 					new SqlParameter("@PartnerLogo", SqlDbType.NVarChar,200),
 					new SqlParameter("@PartnerBanner", SqlDbType.NVarChar,200),
 					new SqlParameter("@PartnerKind", SqlDbType.Int,4),
@@ -96,6 +102,9 @@ namespace zlzw.DAL
 					new SqlParameter("@IsHot", SqlDbType.Int,4),
 					new SqlParameter("@IsEnable", SqlDbType.Int,4),
 					new SqlParameter("@PublishDate", SqlDbType.DateTime),
+					new SqlParameter("@JobContactName", SqlDbType.NVarChar,50),
+					new SqlParameter("@JobContactAdd", SqlDbType.NVarChar,50),
+					new SqlParameter("@JobContactPhone", SqlDbType.NVarChar,50),
 					new SqlParameter("@Other01", SqlDbType.NVarChar,50),
 					new SqlParameter("@Other02", SqlDbType.NVarChar,50),
 					new SqlParameter("@Other03", SqlDbType.NVarChar,50)};
@@ -111,9 +120,12 @@ namespace zlzw.DAL
 			parameters[9].Value = model.IsHot;
 			parameters[10].Value = model.IsEnable;
 			parameters[11].Value = model.PublishDate;
-			parameters[12].Value = model.Other01;
-			parameters[13].Value = model.Other02;
-			parameters[14].Value = model.Other03;
+			parameters[12].Value = model.JobContactName;
+			parameters[13].Value = model.JobContactAdd;
+			parameters[14].Value = model.JobContactPhone;
+			parameters[15].Value = model.Other01;
+			parameters[16].Value = model.Other02;
+			parameters[17].Value = model.Other03;
 
 			DbHelperSQL.RunProcedure("PartnersList_Update",parameters,out rowsAffected);
 			if (rowsAffected > 0)
@@ -169,14 +181,14 @@ namespace zlzw.DAL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public zlzw.Model.PartnersListModal GetModel(int PartnerID)
+		public zlzw.Model.PartnersListModel GetModel(int PartnerID)
 		{
 			SqlParameter[] parameters = {
 					new SqlParameter("@PartnerID", SqlDbType.Int,4)
 			};
 			parameters[0].Value = PartnerID;
 
-			zlzw.Model.PartnersListModal model=new zlzw.Model.PartnersListModal();
+			zlzw.Model.PartnersListModel model=new zlzw.Model.PartnersListModel();
 			DataSet ds= DbHelperSQL.RunProcedure("PartnersList_GetModel",parameters,"ds");
 			if(ds.Tables[0].Rows.Count>0)
 			{
@@ -192,9 +204,9 @@ namespace zlzw.DAL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public zlzw.Model.PartnersListModal DataRowToModel(DataRow row)
+		public zlzw.Model.PartnersListModel DataRowToModel(DataRow row)
 		{
-			zlzw.Model.PartnersListModal model=new zlzw.Model.PartnersListModal();
+			zlzw.Model.PartnersListModel model=new zlzw.Model.PartnersListModel();
 			if (row != null)
 			{
 				if(row["PartnerID"]!=null && row["PartnerID"].ToString()!="")
@@ -245,6 +257,18 @@ namespace zlzw.DAL
 				{
 					model.PublishDate=DateTime.Parse(row["PublishDate"].ToString());
 				}
+				if(row["JobContactName"]!=null)
+				{
+					model.JobContactName=row["JobContactName"].ToString();
+				}
+				if(row["JobContactAdd"]!=null)
+				{
+					model.JobContactAdd=row["JobContactAdd"].ToString();
+				}
+				if(row["JobContactPhone"]!=null)
+				{
+					model.JobContactPhone=row["JobContactPhone"].ToString();
+				}
 				if(row["Other01"]!=null)
 				{
 					model.Other01=row["Other01"].ToString();
@@ -267,7 +291,7 @@ namespace zlzw.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select PartnerID,PartnerGUID,PartnerName,PartnerTitle,PartnerIntroduction,PartnerLogo,PartnerBanner,PartnerKind,PartnerCategory,IsHot,IsEnable,PublishDate,Other01,Other02,Other03 ");
+			strSql.Append("select PartnerID,PartnerGUID,PartnerName,PartnerTitle,PartnerIntroduction,PartnerLogo,PartnerBanner,PartnerKind,PartnerCategory,IsHot,IsEnable,PublishDate,JobContactName,JobContactAdd,JobContactPhone,Other01,Other02,Other03 ");
 			strSql.Append(" FROM PartnersList ");
 			if(strWhere.Trim()!="")
 			{
@@ -287,7 +311,7 @@ namespace zlzw.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" PartnerID,PartnerGUID,PartnerName,PartnerTitle,PartnerIntroduction,PartnerLogo,PartnerBanner,PartnerKind,PartnerCategory,IsHot,IsEnable,PublishDate,Other01,Other02,Other03 ");
+			strSql.Append(" PartnerID,PartnerGUID,PartnerName,PartnerTitle,PartnerIntroduction,PartnerLogo,PartnerBanner,PartnerKind,PartnerCategory,IsHot,IsEnable,PublishDate,JobContactName,JobContactAdd,JobContactPhone,Other01,Other02,Other03 ");
 			strSql.Append(" FROM PartnersList ");
 			if(strWhere.Trim()!="")
 			{

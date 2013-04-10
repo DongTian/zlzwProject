@@ -48,6 +48,9 @@ namespace WebApp.PartnerTemplates
                 labEnterpriseLogo.Text = "<img style='padding-left:20px;' alt='' title='' src='" + dt.Rows[0]["PartnerLogo"].ToString().Split('~')[1] + "' />";
                 labBanner.Text = "<img alt='' title='' src='" + dt.Rows[0]["PartnerBanner"].ToString().Split('~')[1] + "' />";
                 labEnterpriseContent.Text = dt.Rows[0]["PartnerIntroduction"].ToString();
+                labJobContactAdd.Text = dt.Rows[0]["JobContactAdd"].ToString();
+                labJobContactPhone.Text = dt.Rows[0]["JobContactPhone"].ToString();
+                labJobContactName.Text = dt.Rows[0]["JobContactName"].ToString();
             }
             catch (Exception exp)
             {

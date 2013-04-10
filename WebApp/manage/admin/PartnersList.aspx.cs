@@ -127,7 +127,7 @@ namespace WebApp.manage.admin
 
                 zlzw.BLL.PartnersListBLL partnersListBLL = new zlzw.BLL.PartnersListBLL();
                 DataTable dt = partnersListBLL.GetList("PartnerGUID='" + strSelectID + "'").Tables[0];
-                zlzw.Model.PartnersListModal partnersListModal = partnersListBLL.GetModel(int.Parse(dt.Rows[0]["PartnerID"].ToString()));
+                zlzw.Model.PartnersListModel partnersListModal = partnersListBLL.GetModel(int.Parse(dt.Rows[0]["PartnerID"].ToString()));
                 partnersListModal.IsEnable = 0;
                 partnersListBLL.Update(partnersListModal);
                 PartnersList_BindGrid();

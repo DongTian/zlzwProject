@@ -139,6 +139,33 @@ namespace WebApp.manage.admin {
         protected global::ExtAspNet.CheckBox ckbIsHot;
         
         /// <summary>
+        /// txbJobContactAdd 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::ExtAspNet.TextBox txbJobContactAdd;
+        
+        /// <summary>
+        /// txbJobContactPhone 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::ExtAspNet.TextBox txbJobContactPhone;
+        
+        /// <summary>
+        /// txbJobContactName 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::ExtAspNet.TextBox txbJobContactName;
+        
+        /// <summary>
         /// txbPartner 控件。
         /// </summary>
         /// <remarks>

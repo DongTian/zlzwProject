@@ -80,6 +80,7 @@ namespace WebApp.manage.admin
                 txbStorefrontEleganceTitle.Text = storefrontEleganceListModal.StorefrontEleganceTitle;//店铺名称
                 txbStorefrontEleganceDescription.Text = storefrontEleganceListModal.StorefrontEleganceDescription;//店铺简介
                 txbPushJobs.Text = storefrontEleganceListModal.PushJobs;//主推岗位
+                labPreviweImg.ImageUrl = storefrontEleganceListModal.StorefrontEleganceHeadImage.Split('~')[1];
 
                 ViewState["StorefrontEleganceHeadImage"] = storefrontEleganceListModal.StorefrontEleganceHeadImage;//门店简介
                 ViewState["PublishDate"] = storefrontEleganceListModal.PublishDate.ToString();

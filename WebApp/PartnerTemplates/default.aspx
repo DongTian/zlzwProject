@@ -125,19 +125,19 @@
                                                                 <tr>
                                                                     <td align="right" nowrap="nowrap" valign="top">公司地址：
                                                                     </td>
-                                                                    <td align="left" valign="top">山东省青岛市城阳区重庆北路59号
+                                                                    <td align="left" valign="top"><asp:Label ID="labJobContactAdd" runat="server"></asp:Label>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td align="right" nowrap="nowrap" valign="top">联系电话：
                                                                     </td>
-                                                                    <td align="left" valign="top">0532-80971215
+                                                                    <td align="left" valign="top"><asp:Label ID="labJobContactPhone" runat="server"></asp:Label>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td align="right" nowrap="nowrap" valign="top">联系人员：
                                                                     </td>
-                                                                    <td align="left" valign="top">公小姐
+                                                                    <td align="left" valign="top"><asp:Label ID="labJobContactName" runat="server"></asp:Label>
                                                                     </td>
                                                                 </tr>
                                                             </tbody>

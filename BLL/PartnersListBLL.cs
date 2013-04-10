@@ -25,7 +25,7 @@ namespace zlzw.BLL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public int  Add(zlzw.Model.PartnersListModal model)
+		public int  Add(zlzw.Model.PartnersListModel model)
 		{
 			return dal.Add(model);
 		}
@@ -33,7 +33,7 @@ namespace zlzw.BLL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(zlzw.Model.PartnersListModal model)
+		public bool Update(zlzw.Model.PartnersListModel model)
 		{
 			return dal.Update(model);
 		}
@@ -57,7 +57,7 @@ namespace zlzw.BLL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public zlzw.Model.PartnersListModal GetModel(int PartnerID)
+		public zlzw.Model.PartnersListModel GetModel(int PartnerID)
 		{
 			
 			return dal.GetModel(PartnerID);
@@ -66,10 +66,10 @@ namespace zlzw.BLL
 		/// <summary>
 		/// 得到一个对象实体，从缓存中
 		/// </summary>
-		public zlzw.Model.PartnersListModal GetModelByCache(int PartnerID)
+		public zlzw.Model.PartnersListModel GetModelByCache(int PartnerID)
 		{
 			
-			string CacheKey = "PartnersListModalModel-" + PartnerID;
+			string CacheKey = "PartnersListModelModel-" + PartnerID;
 			object objModel = Maticsoft.Common.DataCache.GetCache(CacheKey);
 			if (objModel == null)
 			{
@@ -84,7 +84,7 @@ namespace zlzw.BLL
 				}
 				catch{}
 			}
-			return (zlzw.Model.PartnersListModal)objModel;
+			return (zlzw.Model.PartnersListModel)objModel;
 		}
 
 		/// <summary>
@@ -104,7 +104,7 @@ namespace zlzw.BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<zlzw.Model.PartnersListModal> GetModelList(string strWhere)
+		public List<zlzw.Model.PartnersListModel> GetModelList(string strWhere)
 		{
 			DataSet ds = dal.GetList(strWhere);
 			return DataTableToList(ds.Tables[0]);
@@ -112,20 +112,20 @@ namespace zlzw.BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<zlzw.Model.PartnersListModal> DataTableToList(DataTable dt)
+		public List<zlzw.Model.PartnersListModel> DataTableToList(DataTable dt)
 		{
-			List<zlzw.Model.PartnersListModal> modelList = new List<zlzw.Model.PartnersListModal>();
+			List<zlzw.Model.PartnersListModel> modelList = new List<zlzw.Model.PartnersListModel>();
 			int rowsCount = dt.Rows.Count;
 			if (rowsCount > 0)
 			{
-				zlzw.Model.PartnersListModal model;
+				zlzw.Model.PartnersListModel model;
 				for (int n = 0; n < rowsCount; n++)
 				{
 					model = dal.DataRowToModel(dt.Rows[n]);
 					if (model != null)
 					{
 						modelList.Add(model);
-				}
+					}
 				}
 			}
 			return modelList;

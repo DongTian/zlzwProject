@@ -43,6 +43,7 @@
                                 <FCKeditorV2:FCKeditor ID="FCKeditor1" BasePath="../fckeditor/" runat="server" Height="400px">
                                 </FCKeditorV2:FCKeditor>
                             </ext:ContentPanel>
+                            <ext:Image ID="labPreviweImg" runat="server" Label="预览图" ImageWidth="190px"></ext:Image>
                         </Items>
                     </ext:SimpleForm>
                 </Items>

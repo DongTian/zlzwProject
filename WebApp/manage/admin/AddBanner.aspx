@@ -37,6 +37,7 @@
                             <ext:FileUpload ID="btnBannerUpload" runat="server" Label="焦点图上传" EmptyText="焦点图宽度为1000px"></ext:FileUpload>
                             <ext:TextBox ID="txbBannerLinks" runat="server" Label="链接地址" Text="http://" Required="true" RegexMessage="链接地址不能为空" ></ext:TextBox>
                             <ext:CheckBox ID="ckbIsHot" runat="server" Label="热门焦点图"></ext:CheckBox>
+                            <ext:Image ID="labPreviweImg" runat="server" Label="预览图" ImageWidth="590px" ImageHeight="220px"></ext:Image>
                         </Items>
                     </ext:SimpleForm>
                 </Items>
