@@ -39,7 +39,7 @@
                             <li><a id="menuItem02" name="navigateItem" href="About/AboutKingStudy.aspx">关于校企</a></li>
                             <li><a id="menuItem03" name="navigateItem" href="DispatchServices/EnterpriseServices.aspx">劳务合作</a></li>
                             <li><a id="menuItem04" name="navigateItem" href="Franchising/ProjectDescription.aspx">加盟连锁</a></li>
-                            <li><a id="menuItem05" name="navigateItem" href="http://www.zhixingtianxia.net:86/" target="_blank">人才市场</a></li>
+                            <li><a id="menuItem05" name="navigateItem" href="http://www.qdrcsc.net/" target="_blank">人才市场</a></li>
                             <li><a id="menuItem06" name="navigateItem" href="OnlineApplication.aspx">招聘动态</a></li>
                             <li><a id="A1" name="navigateItem" href="DispatchServices/OnlineJobHunting.aspx">个人求职</a></li>
                             <li><a id="menuItem07" name="navigateItem" href="ContactUs/ContactUs.aspx">联系我们</a></li>
@@ -96,7 +96,7 @@
                 <a href="DispatchServices/EnterpriseServices.aspx">
                     <img style="border: 0px" src="Resources/images/tu_23.gif" /></a><a href='Franchising/ProjectDescription.aspx'>
                     <img style="border: 0px;" src="Resources/images/tu_27.gif" width="231" height="73" /></a>
-                <a href="http://www.zhixingtianxia.net:86/" target="_blank">
+                <a href="http://www.qdrcsc.net/" target="_blank">
                     <img style="border: 0px;" src="Resources/images/tu_28.gif" /></a></div>
             <div class="xinwen">
                 <div class="xinwen_biao">
@@ -115,7 +115,7 @@
         <div class="jiameng">
             <div class="jiameng_biao">
                 <img src="Resources/images/tu_30.gif" />
-            <div id="hbMore"><a href="About/PartnerList.aspx">更多...</a></div>
+            <%--<div id="hbMore"><a href="About/PartnerList.aspx">更多...</a></div>--%>
             </div>
             <asp:Repeater ID="Repeater2" runat="server" OnItemDataBound="Repeater2_ItemDataBound">
                 <ItemTemplate>
@@ -127,16 +127,18 @@
         </div>
         <div class="bottom">
         </div>
+        <br />
         <div class="bottom2">
-            <a href="About/AboutKingStudy.aspx" class="huia">关于我们</a> | <a href="ContactUs/ContactUs.aspx" class="huia">联系我们</a> | <a href="About/CareersList.aspx" class="huia">诚聘英才</a> | <a href="#" class="huia" onclick="javascript:openMail();return false;">企业邮箱</a> | <a href="About/PartnerList.aspx" class="huia">合作伙伴</a> | <a href="../Links/Links.aspx" class="huia">友情链接</a></div>
+            <a href="http://www.chinalao.com/" target="_blank" class="huia">中劳网</a> | <a href="About/AboutKingStudy.aspx" class="huia">关于我们</a> | <a href="ContactUs/ContactUs.aspx" class="huia">联系我们</a> | <a href="About/CareersList.aspx" class="huia">诚聘英才</a> | <a href="#" class="huia" onclick="javascript:openMail();return false;">企业邮箱</a> | <a href="About/PartnerList.aspx" class="huia">合作伙伴</a> | <a href="../Links/Links.aspx" class="huia">友情链接</a></div>
         <div class="bottom3">
             劳务派遣：0532-80971215　加盟连锁：4008-118-678　人才市场：0532-89087588　传真：0532-80971210</div>
         <div class="bottom3">
             地址：山东省青岛市城阳区重庆北路59号 服务监督邮箱：sales@zhilaizhiwang.net</div>
         <div class="bottom3" style="margin-bottom: 30px;">
-            校企英才版权所有1998-2012 未经同意，不得转载本网站之所有信息及作品 鲁ICP备000001</div>
+            校企英才版权所有2008-2012 未经同意，不得转载本网站之所有信息及作品 <a href="http://www.miibeian.gov.cn" target="_blank" style="text-decoration:none;color:#666666">鲁ICP备12003704号</a></div>
         <div class="clear">
         </div>
+        <br />
     </div>
     <uc1:byeguoguo ID="byeguoguo1" runat="server" />
 </form>

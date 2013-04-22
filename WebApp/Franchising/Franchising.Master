@@ -37,7 +37,7 @@
                                 <li><a id="menuItem02" name="navigateItem" href="../About/AboutKingStudy.aspx">关于企业</a></li>
                                 <li><a id="menuItem03" name="navigateItem" href="../DispatchServices/EnterpriseServices.aspx">劳务合作</a></li>
                                 <li><a id="menuItem04" name="navigateItem" href="../Franchising/ProjectDescription.aspx" class="current">加盟连锁</a></li>
-                                <li><a id="menuItem05" name="navigateItem" href="http://www.zhixingtianxia.net:86/" target="_blank">人才市场</a></li>
+                                <li><a id="menuItem05" name="navigateItem" href="http://www.qdrcsc.net/" target="_blank">人才市场</a></li>
                                 <li><a id="menuItem06" name="navigateItem" href="../OnlineApplication.aspx" title=" ">招聘动态</a></li>
                                 <li><a id="A1" name="navigateItem" href="../DispatchServices/OnlineJobHunting.aspx">个人求职</a></li>
                                 <li><a id="menuItem07" name="navigateItem" href="../ContactUs/ContactUs.aspx">联系我们</a></li>
@@ -52,13 +52,13 @@
             <div class="bottom">
             </div>
             <div class="bottom2">
-                <a href="../About/AboutKingStudy.aspx" class="huia">关于我们</a> | <a href="../ContactUs/ContactUs.aspx" class="huia">联系我们</a> | <a href="../About/CareersList.aspx" class="huia">诚聘英才</a> | <a href="#" class="huia" onclick="javascript:art.dialog.open('../EMailTemplate.html', {width: 477, height: 271});">企业邮箱</a> | <a href="../About/PartnerList.aspx" class="huia">合作伙伴</a> | <a href="../Links/Links.aspx" class="huia">友情链接</a></div>
+                <a href="http://www.chinalao.com/" target="_blank" class="huia">中劳网</a> | <a href="../About/AboutKingStudy.aspx" class="huia">关于我们</a> | <a href="../ContactUs/ContactUs.aspx" class="huia">联系我们</a> | <a href="../About/CareersList.aspx" class="huia">诚聘英才</a> | <a href="#" class="huia" onclick="javascript:art.dialog.open('../EMailTemplate.html', {width: 477, height: 271});">企业邮箱</a> | <a href="../About/PartnerList.aspx" class="huia">合作伙伴</a> | <a href="../Links/Links.aspx" class="huia">友情链接</a></div>
             <div class="bottom3">
                 劳务派遣：0532-80971215　加盟连锁：4008-118-678　人才市场：0532-89087588　传真：0532-80971210</div>
             <div class="bottom3">
                 地址：山东省青岛市城阳区重庆北路59号 服务监督邮箱：sales@zhilaizhiwang.net</div>
             <div class="bottom3" style="margin-bottom: 30px;">
-                校企英才版权所有1998-2012 未经同意，不得转载本网站之所有信息及作品 鲁ICP备000001</div>
+                校企英才版权所有2008-2012 未经同意，不得转载本网站之所有信息及作品 <a href="http://www.miibeian.gov.cn" target="_blank" style="text-decoration:none;color:#666666">鲁ICP备12003704号</a></div>
             <div class="clear">
             </div> 
         </div>

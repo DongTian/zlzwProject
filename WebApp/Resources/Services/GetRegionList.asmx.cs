@@ -74,7 +74,6 @@ namespace WebApp.Resources.Services
                     for (int nCount = 0; nCount < dt.Rows.Count; nCount++)
                     {
                         strBuilder.AppendLine("<li><img src='Resources/images/5-120601154100-50.gif'>　<span class='r hui'>" + Set_DateFormat(dt.Rows[nCount]["CreateTime"].ToString()) + "</span><a href='OnlineApplicationInfo.aspx?id=" + dt.Rows[nCount]["EnterpriseJobGuid"].ToString() + "' class='huia'>" + dt.Rows[nCount]["EnterpriseName"].ToString() + "　/　<spanstyle='color: #58738D'>" + dt.Rows[nCount]["EnterpriseJobStation"].ToString() + "</span>　/　<span style='color: #58738D'>" + dt.Rows[nCount]["EnterpriseJobLaborCount"].ToString() + " 人 </span></a></li>");
-                        //strBuilder.Append("<li><span class='r hui'>2010-01-01</span><a href='#' class='huia'>青岛诺尔信电子科技　/　<span style='color:#58738D'>销售员、业务员</span>　/　<span style='color:#58738D'>　6人　</span></a></li>");
                     }
                 }
                 else
@@ -99,7 +98,8 @@ namespace WebApp.Resources.Services
             }
             catch (Exception exp)
             {
-                return DateTime.Now.ToString("yyyy年MM月dd日");
+                throw exp;
+                //return DateTime.Now.ToString("yyyy年MM月dd日");
             }
         }
 

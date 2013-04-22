@@ -1,5 +1,5 @@
-
-body{ font-size:12px;  font-family:"微软雅黑",Arial, Helvetica, sans-serif; color:#454545 }
+锘緻charset "utf-8";
+body{ font-size:12px;  font-family:"寰蒋闆呴粦",Arial, Helvetica, sans-serif; color:#454545 }
 h1,h2,h3,h4,h5,h6{ font-size:12px;}
 a{ text-decoration:none; color:#454545;}
 a:hover{ text-decoration:underline; color:#ff0000;}
@@ -171,7 +171,7 @@ em{ font-style:normal;}
 .line{ width:100%; border-bottom:1px dashed #cacaca; height:1px; display:block}
 
 .left1{ width:295px; float:left;}
-.right1{ width:650px; float:left; border-left:1px solid #cacaca; padding-left:23px;}
+.right1{ width:660px; float:left; border-left:1px solid #cacaca; padding-left:23px;}
 .right11{ width:618px; float:left; border-left:1px solid #cacaca; padding-left:6px;}
 .right111{ width:1000px; float:left; padding-left:22px;}
 .bar3{ height:25px; line-height:25px; position:relative; margin-bottom:18px;}
@@ -248,7 +248,7 @@ em{ font-style:normal;}
 .jli{ margin:10px 0 10px 80px;}
 .select2{ width:218px; height:26px; line-height:26px;}
 
-/* 部分合作企业目录 */
+/* 閮ㄥ垎鍚堜綔浼佷笟鐩綍 */
 
 .EnterpriseList {
     width:100%;

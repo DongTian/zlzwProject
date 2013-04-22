@@ -123,7 +123,7 @@ namespace WebApp
             }
             catch (Exception ex)
             {
-                throw new Exception("转换出错出错!", ex);
+                throw new Exception("转换出错!", ex);
             }
 
         }
